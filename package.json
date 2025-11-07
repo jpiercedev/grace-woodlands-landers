@@ -2,16 +2,21 @@
   "name": "gracewoodlands-landers",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "compress-images": "node scripts/compress-images.js",
+    "optimize-hero-video": "node scripts/optimize-hero-video.js",
+    "optimize-hero-video-fast": "node scripts/optimize-hero-video-fast.js"
   },
   "dependencies": {
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "next": "16.0.1"
+    "next": "16.0.1",
+    "sharp": "^0.34.4"
   },
   "devDependencies": {
     "typescript": "^5",
