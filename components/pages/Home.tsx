@@ -35,6 +35,12 @@ export default function Home() {
   const [contactMessage, setContactMessage] = useState('')
   const [contactMessageType, setContactMessageType] = useState<'success' | 'error' | ''>('')
 
+  // Plan Your Visit modal state
+  const [showPlanVisitModal, setShowPlanVisitModal] = useState(false)
+  const [planVisitData, setPlanVisitData] = useState({ name: '', phone: '', email: '' })
+  const [planVisitSubmitting, setPlanVisitSubmitting] = useState(false)
+  const [planVisitConfirmed, setPlanVisitConfirmed] = useState(false)
+
   // Video state
   const [isIntroVideoPlaying, setIsIntroVideoPlaying] = useState(false)
 
@@ -51,6 +57,21 @@ export default function Home() {
     setContactMessage('Thank you for your message! We\'ll get back to you soon.')
     setContactMessageType('success')
     setContactData({ firstName: '', lastName: '', email: '', message: '' })
+  }
+
+  const handlePlanVisitSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setPlanVisitSubmitting(true)
+    // Simulate form submission delay
+    await new Promise(resolve => setTimeout(resolve, 500))
+    setPlanVisitSubmitting(false)
+    setPlanVisitConfirmed(true)
+  }
+
+  const closePlanVisitModal = () => {
+    setShowPlanVisitModal(false)
+    setPlanVisitConfirmed(false)
+    setPlanVisitData({ name: '', phone: '', email: '' })
   }
 
   // Video handlers
@@ -312,7 +333,7 @@ export default function Home() {
               <div className="launch-announcement">
                 <p className="launch-title">Join us Every Sunday at 9AM & 11AM</p>
               </div>
-              <a href="https://gracewoodlands.com" target="_blank" rel="noopener noreferrer" className="pill signup-btn-red">PLAN YOUR VISIT</a>
+              <button onClick={() => setShowPlanVisitModal(true)} className="pill signup-btn-red">PLAN YOUR VISIT</button>
             </div>
           </div>
         </div>
@@ -878,6 +899,83 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* PLAN YOUR VISIT MODAL */}
+      {showPlanVisitModal && (
+        <div className="plan-visit-modal-overlay" onClick={closePlanVisitModal}>
+          <div className="plan-visit-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="plan-visit-modal-close" onClick={closePlanVisitModal}>×</button>
+            
+            {!planVisitConfirmed ? (
+              <>
+                <h2>Plan Your Visit</h2>
+                <p className="modal-subtitle">Let us know you're coming! Fill in your details below.</p>
+                
+                <form className="plan-visit-form" onSubmit={handlePlanVisitSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="visit-name">Full Name</label>
+                    <input
+                      id="visit-name"
+                      type="text"
+                      placeholder="Your Name"
+                      value={planVisitData.name}
+                      onChange={(e) => setPlanVisitData(prev => ({ ...prev, name: e.target.value }))}
+                      required
+                      disabled={planVisitSubmitting}
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <label htmlFor="visit-phone">Phone Number</label>
+                    <input
+                      id="visit-phone"
+                      type="tel"
+                      placeholder="(XXX) XXX-XXXX"
+                      value={planVisitData.phone}
+                      onChange={(e) => setPlanVisitData(prev => ({ ...prev, phone: e.target.value }))}
+                      required
+                      disabled={planVisitSubmitting}
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <label htmlFor="visit-email">Email Address</label>
+                    <input
+                      id="visit-email"
+                      type="email"
+                      placeholder="your@email.com"
+                      value={planVisitData.email}
+                      onChange={(e) => setPlanVisitData(prev => ({ ...prev, email: e.target.value }))}
+                      required
+                      disabled={planVisitSubmitting}
+                    />
+                  </div>
+                  
+                  <button type="submit" className="plan-visit-submit-btn" disabled={planVisitSubmitting}>
+                    {planVisitSubmitting ? 'SUBMITTING...' : 'CONFIRM VISIT'}
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className="plan-visit-confirmation">
+                <div className="confirmation-icon">✓</div>
+                <h2>Thank You!</h2>
+                <p>We're excited to see you at Grace Woodlands!</p>
+                <p className="confirmation-details">
+                  We've received your information and will be in touch soon at <strong>{planVisitData.phone}</strong> or <strong>{planVisitData.email}</strong>.
+                </p>
+                <p className="confirmation-service-info">
+                  Join us this Sunday at <strong>9AM or 11AM</strong><br />
+                  <span style={{ fontSize: 'clamp(14px, 1.5vw, 16px)', marginTop: '12px', display: 'block' }}>24400 Interstate 45 N<br />The Woodlands, TX 77386</span>
+                </p>
+                <button onClick={closePlanVisitModal} className="plan-visit-close-btn">
+                  CLOSE
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

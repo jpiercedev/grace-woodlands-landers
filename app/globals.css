@@ -1008,8 +1008,7 @@ body.sticky-header {
 }
 
 .contact-section .contact-content {
-  max-width: 1100px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 /* Improve hover contrast for buttons inside Contact section */
@@ -3659,8 +3658,6 @@ section.contact-section, .contact-section {
   grid-template-columns: 1fr 1fr;
   gap: clamp(30px, 4vw, 50px);
   align-items: start;
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .contact-form-container {
@@ -5330,6 +5327,245 @@ section.contact-section, .contact-section {
   color: #155724;
   border: 1px solid #c3e6cb;
 }
+
+/************************
+ PLAN YOUR VISIT MODAL
+*************************/
+.plan-visit-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: clamp(20px, 5vw, 40px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.plan-visit-modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: clamp(30px, 5vw, 50px);
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.plan-visit-modal-close {
+  position: absolute;
+  top: clamp(16px, 2vw, 24px);
+  right: clamp(16px, 2vw, 24px);
+  background: none;
+  border: none;
+  font-size: clamp(28px, 4vw, 36px);
+  cursor: pointer;
+  color: var(--muted);
+  width: clamp(36px, 5vw, 44px);
+  height: clamp(36px, 5vw, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+  padding: 0;
+}
+
+.plan-visit-modal-close:hover {
+  color: var(--dark);
+}
+
+.plan-visit-modal-content h2 {
+  color: var(--dark);
+  margin: 0 0 clamp(12px, 2vw, 16px);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.modal-subtitle {
+  color: var(--muted);
+  font-size: clamp(14px, 1.8vw, 16px);
+  margin: 0 0 clamp(24px, 4vw, 32px);
+  line-height: 1.5;
+}
+
+.plan-visit-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vw, 20px);
+}
+
+.plan-visit-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1vw, 8px);
+}
+
+.plan-visit-form label {
+  font-weight: 700;
+  font-size: clamp(13px, 1.5vw, 14px);
+  color: var(--dark);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.plan-visit-form input {
+  padding: clamp(12px, 2vw, 14px);
+  border: 2px solid var(--edge);
+  border-radius: 6px;
+  font-size: clamp(14px, 1.8vw, 16px);
+  font-family: inherit;
+  background: white;
+  color: var(--cafe-noir);
+  transition: all 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.plan-visit-form input:focus {
+  outline: none;
+  border-color: var(--lion);
+  box-shadow: 0 0 0 3px rgba(174, 143, 99, 0.2);
+}
+
+.plan-visit-form input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.plan-visit-submit-btn {
+  height: clamp(46px, 4vw, 50px);
+  background: var(--lion);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 800;
+  font-family: 'proxima-nova';
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  font-size: clamp(14px, 1.8vw, 16px);
+  transition: all 0.3s ease;
+  margin-top: clamp(8px, 1.5vw, 12px);
+  text-transform: uppercase;
+}
+
+.plan-visit-submit-btn:hover:not(:disabled) {
+  background: #c4a373;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(174, 143, 99, 0.3);
+}
+
+.plan-visit-submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Confirmation Screen */
+.plan-visit-confirmation {
+  text-align: center;
+}
+
+.confirmation-icon {
+  font-size: clamp(48px, 8vw, 64px);
+  color: #28a745;
+  margin-bottom: clamp(16px, 3vw, 24px);
+  line-height: 1;
+}
+
+.plan-visit-confirmation h2 {
+  color: var(--dark);
+  margin: 0 0 clamp(12px, 2vw, 16px);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
+}
+
+.plan-visit-confirmation p {
+  color: var(--text);
+  font-size: clamp(14px, 1.8vw, 16px);
+  margin: 0 0 clamp(12px, 2vw, 16px);
+  line-height: 1.6;
+}
+
+.confirmation-details {
+  background: #f8f8f8;
+  padding: clamp(16px, 2.5vw, 20px);
+  border-radius: 8px;
+  margin: clamp(16px, 2.5vw, 20px) 0;
+}
+
+.confirmation-service-info {
+  background: var(--lion-900);
+  padding: clamp(16px, 2.5vw, 20px);
+  border-radius: 8px;
+  color: var(--dark);
+  font-weight: 600;
+  margin: clamp(16px, 2.5vw, 20px) 0;
+}
+
+.plan-visit-close-btn {
+  height: clamp(46px, 4vw, 50px);
+  background: var(--lion);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 800;
+  font-family: 'proxima-nova';
+  letter-spacing: 0.6px;
+  cursor: pointer;
+  font-size: clamp(14px, 1.8vw, 16px);
+  transition: all 0.3s ease;
+  margin-top: clamp(20px, 3vw, 28px);
+  text-transform: uppercase;
+  min-width: 200px;
+}
+
+.plan-visit-close-btn:hover {
+  background: #c4a373;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(174, 143, 99, 0.3);
+}
+
+@media (max-width: 768px) {
+  .plan-visit-modal-overlay {
+    padding: clamp(16px, 4vw, 20px);
+  }
+
+  .plan-visit-modal-content {
+    padding: clamp(24px, 4vw, 32px);
+  }
+
+  .plan-visit-form .form-group {
+    gap: clamp(4px, 1vw, 6px);
+  }
+}
+
 
 .contact-message.error {
   background: #f8d7da;
