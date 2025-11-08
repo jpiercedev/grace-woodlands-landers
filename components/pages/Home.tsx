@@ -181,7 +181,7 @@ export default function Home() {
           <Link href="/">
             <img
               src="https://gracewoodlands.com/wp-content/uploads/2021/09/Grace-logo-for-web-white.png"
-              alt="Grace Woodlands"
+              alt="Grace Woodlands Church - The Woodlands, Texas"
               className="logo"
             />
           </Link>
@@ -272,7 +272,7 @@ export default function Home() {
                   <div className="video-link" onClick={handlePlayButtonClick} style={{ cursor: 'pointer' }}>
                     <img
                       src="https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg"
-                      alt="Grace Building"
+                      alt="Grace Woodlands church building in The Woodlands, Texas"
                       style={{
                         width: '100%',
                         height: '100%',
@@ -371,15 +371,15 @@ export default function Home() {
             <div className="about-media">
               <div className="media-collage">
                 <div className="about-image wide">
-                  <img src="/images/general/steve smile.jpeg" alt="Steve & Becky" />
+                  <img src="/images/general/steve smile.jpeg" alt="Steve and Becky Riggle - Founding Pastors of Grace Woodlands" />
                 </div>
 
                 <div className="about-image">
-                  <img src="/images/general/GATC - girls1.jpeg" alt="Gallery" />
+                  <img src="/images/general/GATC - girls1.jpeg" alt="Grace Woodlands community worship and fellowship in The Woodlands, TX" />
                 </div>
 
                 <div className="about-image">
-                  <img src="https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg" alt="Grace Building" />
+                  <img src="https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg" alt="Grace Woodlands church building located at 24400 Interstate 45 N, The Woodlands, TX 77386" />
                 </div>
               </div>
             </div>
@@ -403,8 +403,8 @@ export default function Home() {
                     width="797"
                     height="705"
                     src="https://gracewoodlands.com/wp-content/uploads/2025/09/FFFFLogo.png"
-                    alt=""
-                    title="FFFFLogo"
+                    alt="Family, Faith, Friends, and Freedom - Grace Woodlands values"
+                    title="Family, Faith, Friends, and Freedom"
                   />
                 </span>
               </div>
@@ -419,7 +419,7 @@ export default function Home() {
             <div>
               <Image
                 src="/images/church/Grace-Building-980x553-small.webp"
-                alt="Grace Building"
+                alt="Grace Woodlands church building - 24400 Interstate 45 N, The Woodlands, TX 77386"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 style={{ objectFit: 'cover' }}
@@ -467,7 +467,7 @@ export default function Home() {
           <div className="team-grid">
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('steve-becky')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/steve-becky-09-25-thumbnail-thumbnail.webp" alt="Steve & Becky" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/steve-becky-09-25-thumbnail-thumbnail.webp" alt="Steve and Becky Riggle - Founding Pastors of Grace Woodlands Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Steve & Becky Riggle</div>
@@ -480,7 +480,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('josh')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/josh-pierce-staff-small.jpeg" alt="Josh Pierce" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/josh-pierce-staff-small.jpeg" alt="Josh Pierce - Executive Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Josh Pierce</div>
@@ -491,7 +491,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('sam-thomas')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/sam-thomas-staff-small.jpeg" alt="Dr. Sam Thomas" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/sam-thomas-staff-small.jpeg" alt="Dr. Sam Thomas - Teaching Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Dr. Sam Thomas</div>
@@ -502,7 +502,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('jason-nelson')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/jason-nelson-staff-small.jpeg" alt="Dr. Jason J. Nelson" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/jason-nelson-staff-small.jpeg" alt="Dr. Jason J. Nelson - Associate Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Dr. Jason J. Nelson</div>
@@ -513,7 +513,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('brooke')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/brooke-pierce-staff-small.jpeg" alt="Brooke Pierce" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/brooke-pierce-staff-small.jpeg" alt="Brooke Pierce - Outreach Pastor and Women's Ministry Leader at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Brooke Pierce</div>
@@ -524,7 +524,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('rachele')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/rachele-karmout-staff-small.jpeg" alt="Rachele Karmout" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/rachele-karmout-staff-small.jpeg" alt="Rachele Karmout - Family Life Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Rachele Karmout</div>
@@ -535,7 +535,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('rachel')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/rachel-santiago-staff-small.jpeg" alt="Rachel Santiago" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/rachel-santiago-staff-small.jpeg" alt="Rachel Santiago - Groups and Events Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Rachel Santiago</div>
@@ -546,7 +546,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('stu-debbe')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/stu-debbe-staff-small.jpeg" alt="Stu & Debbe Johnson" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/stu-debbe-staff-small.jpeg" alt="Stu and Debbe Johnson - Associate Pastors at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Stu & Debbe Johnson</div>
@@ -770,7 +770,7 @@ export default function Home() {
               <div className="footer-brand">
                 <img
                   src="https://gracewoodlands.com/wp-content/uploads/2021/09/Grace-logo-for-web-white.png"
-                  alt="Grace Woodlands"
+                  alt="Grace Woodlands Church - The Woodlands, Texas"
                   className="footer-logo"
                 />
                 <p className="footer-description">Grace Woodlands is a multigenerational church in The Woodlands, TX. Join us Sundays to worship, grow in community, and serve our city.</p>

@@ -3,8 +3,63 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://gracewoodlands.com'),
-  title: "Grace Woodlands",
-  description: "A church in The Woodlands, Texas",
+  title: {
+    default: "Grace Woodlands - Church in The Woodlands, Texas",
+    template: "%s | Grace Woodlands"
+  },
+  description: "Join Grace Woodlands every Sunday at 9am and 11am in The Woodlands, TX. A vibrant, multigenerational church where you can worship God, grow in faith, and serve the community.",
+  keywords: [
+    'Grace Woodlands',
+    'church The Woodlands TX',
+    'The Woodlands church',
+    'church near me The Woodlands',
+    'Christian church The Woodlands',
+    'Steve Riggle',
+    'Becky Riggle',
+    'Grace Church Texas',
+    'multigenerational church',
+    'family church The Woodlands',
+    'worship service The Woodlands',
+    'Sunday service The Woodlands',
+    'Bible teaching church',
+    'prayer church The Woodlands',
+    'Grace International',
+    'church 77386',
+    'church Interstate 45',
+    'Montgomery County church'
+  ],
+  authors: [{ name: 'Grace Woodlands' }],
+  creator: 'Grace Woodlands',
+  publisher: 'Grace Woodlands',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://gracewoodlands.com',
+    siteName: 'Grace Woodlands',
+    title: 'Grace Woodlands - Church in The Woodlands, Texas',
+    description: 'Join Grace Woodlands every Sunday at 9am and 11am. Experience a fresh outpouring of the presence of God in The Woodlands, TX.',
+    images: [
+      {
+        url: 'https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building.jpg',
+        width: 1200,
+        height: 677,
+        alt: 'Grace Woodlands church building in The Woodlands, Texas',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@gracewoodlands',
+    creator: '@gracewoodlands',
+    title: 'Grace Woodlands - Church in The Woodlands, Texas',
+    description: 'Join us every Sunday at 9am and 11am in The Woodlands, TX.',
+    images: ['https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building.jpg'],
+  },
   robots: {
     index: true,
     follow: true,
@@ -15,6 +70,12 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  alternates: {
+    canonical: 'https://gracewoodlands.com',
+  },
+  verification: {
+    google: 'verification_token_here', // Add actual Google Search Console verification token
   },
 };
 
@@ -34,8 +95,11 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Church",
               "name": "Grace Woodlands",
-              "description": "A church in The Woodlands, Texas",
+              "alternateName": "Grace Church Woodlands",
+              "description": "A vibrant, multigenerational church in The Woodlands, Texas where people from all walks of life come together to worship God, grow in faith, and serve the community.",
               "url": "https://gracewoodlands.com",
+              "logo": "https://gracewoodlands.com/wp-content/uploads/2021/09/Grace-logo-for-web-white.png",
+              "image": "https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building.jpg",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "24400 Interstate 45 N",
@@ -44,8 +108,51 @@ export default function RootLayout({
                 "postalCode": "77386",
                 "addressCountry": "US"
               },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "30.1735",
+                "longitude": "-95.4612"
+              },
               "telephone": "(832) 381-2306",
-              "openingHours": ["Su 09:00-12:00"]
+              "email": "info@gracewoodlands.com",
+              "openingHours": ["Su 09:00-12:00", "Mo-Fr 09:00-17:00"],
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": "Sunday",
+                  "opens": "09:00",
+                  "closes": "12:00",
+                  "description": "Sunday worship services at 9am and 11am"
+                },
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                  "opens": "09:00",
+                  "closes": "17:00",
+                  "description": "Office hours"
+                }
+              ],
+              "sameAs": [
+                "https://www.facebook.com/gracewoodlands",
+                "https://www.instagram.com/gracewoodlands/",
+                "https://www.youtube.com/gracewoodlands",
+                "https://twitter.com/gracewoodlands"
+              ],
+              "founder": {
+                "@type": "Person",
+                "name": "Steve Riggle",
+                "jobTitle": "Founding Pastor"
+              },
+              "areaServed": {
+                "@type": "GeoCircle",
+                "geoMidpoint": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "30.1735",
+                  "longitude": "-95.4612"
+                },
+                "geoRadius": "50000"
+              },
+              "hasMap": "https://www.google.com/maps/dir/?api=1&destination=24400+Interstate+45+N+The+Woodlands+TX+77386"
             })
           }}
         />
