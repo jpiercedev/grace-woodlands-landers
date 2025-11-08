@@ -369,16 +369,16 @@ p {
   }
 
   .mobile-menu-toggle {
-    display: block;
+    display: none !important;
   }
+}
+
+.mobile-menu {
+  display: none !important;
 }
 
 @media (min-width: 769px) {
   .mobile-menu-toggle {
-    display: none;
-  }
-
-  .mobile-menu {
     display: none;
   }
 }
@@ -601,14 +601,22 @@ body.sticky-header {
   .video-hero {
     /* On smaller screens keep an approachable 16:9 feel and allow taller max height */
     aspect-ratio: 16 / 9;
-    max-height: 50vh;
+    max-height: 60vh;
     width: 100%;
     height: auto;
-    min-height: 220px;
+    min-height: 280px;
   }
 
   .hero-overlay {
     background: rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-copy {
+    padding: clamp(30px, 5vw, 50px);
+  }
+
+  .hero-copy .subhead {
+    font-size: clamp(14px, 2vw, 16px);
   }
 }
 
@@ -636,6 +644,16 @@ body.sticky-header {
 *************************/
 .quick-nav { background: var(--section-light); padding: clamp(16px, 3vw, 24px) 0; }
 .quick-nav .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: clamp(12px, 2.5vw, 20px); }
+
+@media (max-width: 768px) {
+  .quick-nav .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quick-nav .container .pill:nth-child(5) {
+    grid-column: 1 / -1;
+  }
+}
+
 .pill { display: inline-block; text-decoration: none; color: var(--white); background: var(--lion); padding: clamp(12px, 2vw, 16px) clamp(16px, 3vw, 24px); font-weight: 800; font-family: 'proxima-nova'; font-size: clamp(14px, 1.8vw, 16px); border-radius: 4px; text-align: center; border: none; box-shadow: none; letter-spacing: 0.8px; transition: all 0.3s ease; transform: translateY(0); }
 .pill:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(174, 143, 99, 0.3); background: #c4a373; }
 
@@ -933,6 +951,12 @@ body.sticky-header {
   height: auto;
 }
 
+@media (max-width: 768px) {
+  .et_pb_image_wrap.centered-logo img {
+    max-width: 200px;
+  }
+}
+
 /* Make the featured hero full-bleed (no rounded corners) and keep background full-width */
 .et_pb_section.featured-hero {
   position: relative;
@@ -1049,6 +1073,12 @@ section.contact-section, .contact-section {
 .contact-section .contact-content {
   padding-top: 18px;
   padding-bottom: 18px;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: clamp(24px, 4vw, 48px) 0;
+  }
 }
 
 .service-time h4,
