@@ -16,8 +16,18 @@ declare module '@mailchimp/mailchimp_marketing' {
     merge_fields?: MergeFields
   }
 
+  interface Tag {
+    name: string
+    status: 'active' | 'inactive'
+  }
+
+  interface TagsBody {
+    tags: Tag[]
+  }
+
   interface Lists {
     addListMember(listId: string, body: ListMember): Promise<any>
+    updateListMemberTags(listId: string, subscriberHash: string, body: TagsBody): Promise<any>
   }
 
   interface Mailchimp {

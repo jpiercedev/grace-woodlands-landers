@@ -643,14 +643,11 @@ body.sticky-header {
  QUICK NAV
 *************************/
 .quick-nav { background: var(--section-light); padding: clamp(16px, 3vw, 24px) 0; }
-.quick-nav .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: clamp(12px, 2.5vw, 20px); }
+.quick-nav .container { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(12px, 2.5vw, 20px); }
 
 @media (max-width: 768px) {
   .quick-nav .container {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .quick-nav .container .pill:nth-child(5) {
-    grid-column: 1 / -1;
   }
 }
 
@@ -994,7 +991,7 @@ body.sticky-header {
 /************************
  LOCATION
 *************************/
-.location { background: var(--brown); color: var(--white); padding: clamp(40px, 6vw, 80px) 0; margin-bottom: clamp(20px, 3vw, 40px); border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); }
+.location { background: var(--brown); color: var(--white); padding: clamp(40px, 6vw, 80px) 0; margin-bottom: 0px; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); }
 .location p { color: var(--white); opacity: 0.95; }
 .location .container { display: grid; grid-template-columns: 1fr; gap: clamp(12px, 3vw, 24px); }
 .location-image {
@@ -1628,7 +1625,6 @@ section.contact-section, .contact-section {
  RESPONSIVE BREAKPOINTS
 *************************/
 @media (min-width: 768px) {
-  .quick-nav .container { grid-template-columns: repeat(5, 1fr); }
   .signup-form { grid-template-columns: 1fr 1fr auto; align-items: end; }
 }
 

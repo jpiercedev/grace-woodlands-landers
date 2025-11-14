@@ -41,6 +41,13 @@ export default function Home() {
   const [planVisitSubmitting, setPlanVisitSubmitting] = useState(false)
   const [planVisitConfirmed, setPlanVisitConfirmed] = useState(false)
 
+  // Timed signup modal state
+  const [showTimedSignupModal, setShowTimedSignupModal] = useState(false)
+  const [timedSignupData, setTimedSignupData] = useState({ name: '', email: '' })
+  const [timedSignupSubmitting, setTimedSignupSubmitting] = useState(false)
+  const [timedSignupMessage, setTimedSignupMessage] = useState('')
+  const [timedSignupMessageType, setTimedSignupMessageType] = useState<'success' | 'error' | ''>('')
+
   // Video state
   const [isIntroVideoPlaying, setIsIntroVideoPlaying] = useState(false)
 
@@ -136,6 +143,51 @@ export default function Home() {
     setShowPlanVisitModal(false)
     setPlanVisitConfirmed(false)
     setPlanVisitData({ name: '', phone: '', email: '' })
+  }
+
+  // Timed signup modal handler
+  const handleTimedSignupSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setTimedSignupSubmitting(true)
+    setTimedSignupMessage('')
+    setTimedSignupMessageType('')
+
+    try {
+      const response = await fetch('/api/signup-modal', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(timedSignupData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setTimedSignupMessage(data.message || 'Thanks for signing up for the latest updates!')
+        setTimedSignupMessageType('success')
+        setTimedSignupData({ name: '', email: '' })
+        // Close modal after 2 seconds on success
+        setTimeout(() => {
+          setShowTimedSignupModal(false)
+          setTimedSignupMessage('')
+          setTimedSignupMessageType('')
+        }, 2000)
+      } else {
+        setTimedSignupMessage(data.error || 'Something went wrong. Please try again.')
+        setTimedSignupMessageType('error')
+      }
+    } catch (error) {
+      setTimedSignupMessage('Failed to sign up. Please try again.')
+      setTimedSignupMessageType('error')
+    } finally {
+      setTimedSignupSubmitting(false)
+    }
+  }
+
+  const closeTimedSignupModal = () => {
+    setShowTimedSignupModal(false)
+    setTimedSignupMessage('')
+    setTimedSignupMessageType('')
+    setTimedSignupData({ name: '', email: '' })
   }
 
   // Video handlers
@@ -251,6 +303,20 @@ export default function Home() {
     }
   }, [])
 
+  // Timed modal effect - show after 3 seconds on first visit
+  useEffect(() => {
+    const hasSeenModal = sessionStorage.getItem('hasSeenSignupModal')
+
+    if (!hasSeenModal) {
+      const timer = setTimeout(() => {
+        setShowTimedSignupModal(true)
+        sessionStorage.setItem('hasSeenSignupModal', 'true')
+      }, 3000) // Show after 3 seconds
+
+      return () => clearTimeout(timer)
+    }
+  }, [])
+
   return (
     <div className="page">
       {/* ANNOUNCEMENT BANNER */}
@@ -275,7 +341,7 @@ export default function Home() {
             <>
               <nav className="header-nav desktop-nav">
                 <a href="#about" className="nav-link">ABOUT</a>
-                <a href="#team" className="nav-link">OUR TEAM</a>
+                {/* <a href="#team" className="nav-link">OUR TEAM</a> */}
                 <a href="https://gracewoodlands.com/ministries/" target="_blank" rel="noopener noreferrer" className="nav-link">MINISTRIES</a>
                 <a href="https://gracewoodlands.com/upcoming-events/" className="nav-link">EVENTS</a>
                 <a href="#contact" className="nav-link">CONTACT</a>
@@ -300,7 +366,7 @@ export default function Home() {
             <div className="mobile-menu">
               <nav className="mobile-nav">
                 <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>ABOUT</a>
-                <a href="#team" onClick={() => setIsMobileMenuOpen(false)}>OUR TEAM</a>
+                {/* <a href="#team" onClick={() => setIsMobileMenuOpen(false)}>OUR TEAM</a> */}
                 <a href="https://gracewoodlands.com/ministries/" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>MINISTRIES</a>
                 <a href="https://gracewoodlands.com/upcoming-events/" onClick={() => setIsMobileMenuOpen(false)}>EVENTS</a>
                 <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>CONTACT</a>
@@ -340,7 +406,7 @@ export default function Home() {
       <nav className="quick-nav">
         <div className="container">
           <Link href="#about" className="pill gold">ABOUT GRACE</Link>
-          <Link href="#team" className="pill gold">OUR TEAM</Link>
+          {/* <Link href="#team" className="pill gold">OUR TEAM</Link> */}
           <a href="https://gracewoodlands.com/ministries/" target="_blank" rel="noopener noreferrer" className="pill gold">MINISTRIES</a>
           <a href="https://gracewoodlands.com/upcoming-events/" className="pill gold" target="_blank" rel="noopener noreferrer">EVENTS</a>
           <a href="https://gracewoodlands.com/give" target="_blank" rel="noopener noreferrer" className="pill gold">GIVE</a>
@@ -390,7 +456,6 @@ export default function Home() {
             </div>
             <div className="intro-copy">
               <h2 className="section-title tight">GRACE CHURCH</h2>
-              <div className="kicker">THE WOODLANDS, TX</div>
               <p>Join us at Grace Church this Sunday at 9am and 11am! We invite you to Grace to experience a fresh outpouring of the presence of God in one of our services.</p>
               <p>Plus, there are 50+ groups and classes to help you and your family grow in your faith, be equipped with a greater understanding of God's Word, and learn more about His purpose for your life.</p>
               <p>With ministries for everyone… kids, teenagers, men, women, young adults, married couples, singles, seniors, military veterans, and more… you'll find your place at Grace!</p>
@@ -888,7 +953,6 @@ export default function Home() {
                   alt="Grace Church - The Woodlands, Texas"
                   className="footer-logo"
                 />
-                <p className="footer-description">Grace Church is a multigenerational church in The Woodlands, TX. Join us Sundays to worship, grow in community, and serve our city.</p>
 
                 <div className="footer-signup">
                   <h4>Stay Connected</h4>
@@ -1065,6 +1129,69 @@ export default function Home() {
                 <button onClick={closePlanVisitModal} className="plan-visit-close-btn">
                   CLOSE
                 </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* TIMED SIGNUP MODAL */}
+      {showTimedSignupModal && (
+        <div className="plan-visit-modal-overlay" onClick={closeTimedSignupModal}>
+          <div className="plan-visit-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="plan-visit-modal-close" onClick={closeTimedSignupModal}>×</button>
+
+            {timedSignupMessageType !== 'success' ? (
+              <>
+                <h2>Stay Connected</h2>
+                <p className="modal-subtitle">Sign up for the latest updates from Grace Church!</p>
+
+                <form className="plan-visit-form" onSubmit={handleTimedSignupSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="timed-signup-name">Full Name</label>
+                    <input
+                      id="timed-signup-name"
+                      type="text"
+                      placeholder="Your Name"
+                      value={timedSignupData.name}
+                      onChange={(e) => setTimedSignupData(prev => ({ ...prev, name: e.target.value }))}
+                      required
+                      disabled={timedSignupSubmitting}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="timed-signup-email">Email Address</label>
+                    <input
+                      id="timed-signup-email"
+                      type="email"
+                      placeholder="your@email.com"
+                      value={timedSignupData.email}
+                      onChange={(e) => setTimedSignupData(prev => ({ ...prev, email: e.target.value }))}
+                      required
+                      disabled={timedSignupSubmitting}
+                    />
+                  </div>
+
+                  {timedSignupMessage && (
+                    <div className={`signup-message ${timedSignupMessageType}`}>
+                      {timedSignupMessage}
+                    </div>
+                  )}
+
+                  <button type="submit" className="plan-visit-submit-btn" disabled={timedSignupSubmitting}>
+                    {timedSignupSubmitting ? 'SIGNING UP...' : 'SIGN UP'}
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className="plan-visit-confirmation">
+                <div className="confirmation-icon">✓</div>
+                <h2>Thank You!</h2>
+                <p>You're all signed up for updates from Grace Church!</p>
+                <p className="confirmation-details">
+                  We'll keep you informed about upcoming events, messages, and ways to get connected.
+                </p>
               </div>
             )}
           </div>

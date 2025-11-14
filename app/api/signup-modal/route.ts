@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
 import mailchimp from '@mailchimp/mailchimp_marketing'
+import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY!)
 
@@ -11,18 +11,18 @@ mailchimp.setConfig({
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, phone, email } = await request.json()
+    const { name, email } = await request.json()
 
-    console.log('Plan visit submission:', { name, phone, email })
+    console.log('Timed signup modal submission:', { name, email })
 
-    if (!name || !phone || !email) {
+    if (!name || !email) {
       return NextResponse.json(
-        { error: 'All fields are required' },
+        { error: 'Name and email are required' },
         { status: 400 }
       )
     }
 
-    // Add to Mailchimp
+    // Add to Mailchimp with high intent tag
     try {
       console.log('Attempting to add to Mailchimp...')
       const listId = process.env.MAILCHIMP_AUDIENCE_ID!
@@ -36,20 +36,19 @@ export async function POST(request: NextRequest) {
         merge_fields: {
           FNAME: firstName,
           LNAME: lastName,
-          PHONE: phone,
         },
       })
 
       // Add high intent tag
       const subscriberHash = response.id
       await mailchimp.lists.updateListMemberTags(listId, subscriberHash, {
-        tags: [{ name: 'Plan Visit - High Intent', status: 'active' }],
+        tags: [{ name: 'Popup Modal - High Intent', status: 'active' }],
       })
 
       console.log('Successfully added to Mailchimp with high intent tag')
     } catch (mailchimpError: any) {
       console.error('Mailchimp error:', mailchimpError)
-      // Continue even if Mailchimp fails - we still want to send the notification
+      // Continue even if Mailchimp fails
     }
 
     // Send HIGH INTENT notification email via Resend
@@ -58,7 +57,7 @@ export async function POST(request: NextRequest) {
       const result = await resend.emails.send({
         from: 'Grace Woodlands <notifications@gracewoodlands.com>',
         to: [process.env.NOTIFICATION_EMAIL!],
-        subject: '🔥 HIGH INTENT LEAD - Plan Your Visit',
+        subject: '🔥 HIGH INTENT LEAD - Popup Modal Signup',
         html: `
           <!DOCTYPE html>
           <html>
@@ -84,8 +83,8 @@ export async function POST(request: NextRequest) {
                           <div style="background-color: #ff4444; color: white; padding: 12px 20px; border-radius: 6px; margin-bottom: 20px; text-align: center; font-weight: 700; font-size: 16px;">
                             🔥 HIGH INTENT LEAD
                           </div>
-                          <h2 style="margin: 0 0 20px 0; color: #493824; font-size: 24px; font-weight: 700;">New Visit Planned</h2>
-                          <p style="margin: 0 0 20px 0; color: #666; font-size: 16px; line-height: 1.5;">Someone just planned a visit to Grace Church through the website. <strong>This is a high-intent lead - follow up promptly!</strong></p>
+                          <h2 style="margin: 0 0 20px 0; color: #493824; font-size: 24px; font-weight: 700;">New Popup Modal Signup</h2>
+                          <p style="margin: 0 0 20px 0; color: #666; font-size: 16px; line-height: 1.5;">Someone signed up through the timed popup modal. <strong>This is a high-intent lead - they engaged within seconds of visiting!</strong></p>
                           
                           <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f9f9f9; border-radius: 6px; padding: 20px; margin: 20px 0;">
                             <tr>
@@ -93,16 +92,13 @@ export async function POST(request: NextRequest) {
                                 <p style="margin: 0 0 10px 0; color: #493824; font-size: 14px; font-weight: 600;">Name:</p>
                                 <p style="margin: 0 0 20px 0; color: #333; font-size: 16px;">${name}</p>
                                 
-                                <p style="margin: 0 0 10px 0; color: #493824; font-size: 14px; font-weight: 600;">Phone:</p>
-                                <p style="margin: 0 0 20px 0; color: #333; font-size: 16px;">${phone}</p>
-                                
                                 <p style="margin: 0 0 10px 0; color: #493824; font-size: 14px; font-weight: 600;">Email:</p>
                                 <p style="margin: 0; color: #333; font-size: 16px;">${email}</p>
                               </td>
                             </tr>
                           </table>
                           
-                          <p style="margin: 20px 0 0 0; color: #999; font-size: 14px;">Reach out to welcome them! Contact: <a href="mailto:${email}" style="color: #AE8F63; text-decoration: none;">${email}</a> or <a href="tel:${phone}" style="color: #AE8F63; text-decoration: none;">${phone}</a></p>
+                          <p style="margin: 20px 0 0 0; color: #999; font-size: 14px;">Reach out to welcome them! Contact: <a href="mailto:${email}" style="color: #AE8F63; text-decoration: none;">${email}</a></p>
                         </td>
                       </tr>
                       
@@ -123,22 +119,17 @@ export async function POST(request: NextRequest) {
       console.log('Email sent successfully via Resend:', result)
     } catch (resendError: any) {
       console.error('Resend error:', resendError)
-      console.error('Resend error details:', JSON.stringify(resendError, null, 2))
-      return NextResponse.json(
-        { error: 'Failed to process visit. Please try again.', details: resendError.message },
-        { status: 500 }
-      )
+      // Continue even if email fails
     }
 
     return NextResponse.json({
       success: true,
-      message: 'Thank you! We\'re excited to see you at Grace Church!',
+      message: 'Thanks for signing up for the latest updates!',
     })
   } catch (error: any) {
-    console.error('Plan visit error:', error)
-    console.error('Plan visit error details:', JSON.stringify(error, null, 2))
+    console.error('Signup modal error:', error)
     return NextResponse.json(
-      { error: 'Failed to process visit. Please try again.', details: error.message },
+      { error: 'Failed to sign up. Please try again.' },
       { status: 500 }
     )
   }
