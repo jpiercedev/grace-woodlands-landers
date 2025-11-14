@@ -47,25 +47,89 @@ export default function Home() {
   // Form handlers
   const handleSignupSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSignupMessage('Thank you for signing up! We\'ll be in touch soon.')
-    setSignupMessageType('success')
-    setSignupData({ name: '', email: '' })
+    setSignupSubmitting(true)
+    setSignupMessage('')
+    setSignupMessageType('')
+
+    try {
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(signupData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSignupMessage(data.message || 'Thanks for signing up for the latest updates!')
+        setSignupMessageType('success')
+        setSignupData({ name: '', email: '' })
+      } else {
+        setSignupMessage(data.error || 'Something went wrong. Please try again.')
+        setSignupMessageType('error')
+      }
+    } catch (error) {
+      setSignupMessage('Failed to sign up. Please try again.')
+      setSignupMessageType('error')
+    } finally {
+      setSignupSubmitting(false)
+    }
   }
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setContactMessage('Thank you for your message! We\'ll get back to you soon.')
-    setContactMessageType('success')
-    setContactData({ firstName: '', lastName: '', email: '', message: '' })
+    setContactSubmitting(true)
+    setContactMessage('')
+    setContactMessageType('')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(contactData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setContactMessage(data.message || 'Thank you for your message! We\'ll get back to you soon.')
+        setContactMessageType('success')
+        setContactData({ firstName: '', lastName: '', email: '', message: '' })
+      } else {
+        setContactMessage(data.error || 'Something went wrong. Please try again.')
+        setContactMessageType('error')
+      }
+    } catch (error) {
+      setContactMessage('Failed to send message. Please try again.')
+      setContactMessageType('error')
+    } finally {
+      setContactSubmitting(false)
+    }
   }
 
   const handlePlanVisitSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setPlanVisitSubmitting(true)
-    // Simulate form submission delay
-    await new Promise(resolve => setTimeout(resolve, 500))
-    setPlanVisitSubmitting(false)
-    setPlanVisitConfirmed(true)
+
+    try {
+      const response = await fetch('/api/plan-visit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(planVisitData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setPlanVisitConfirmed(true)
+      } else {
+        alert(data.error || 'Something went wrong. Please try again.')
+      }
+    } catch (error) {
+      alert('Failed to submit. Please try again.')
+    } finally {
+      setPlanVisitSubmitting(false)
+    }
   }
 
   const closePlanVisitModal = () => {
@@ -103,7 +167,7 @@ export default function Home() {
     'steve-becky': {
       name: 'Steve & Becky Riggle',
       title: 'Founding Pastors',
-      bio: 'Steve and Becky Riggle are the founding pastors of Grace Woodlands. With decades of ministry experience, they have dedicated their lives to building the kingdom of God and developing leaders who will impact their generation for Christ.',
+      bio: 'Steve and Becky Riggle are the founding pastors of Grace Church. With decades of ministry experience, they have dedicated their lives to building the kingdom of God and developing leaders who will impact their generation for Christ.',
       email: '',
       moreLink: 'https://gracewoodlands.com/leadership/'
     },
@@ -111,7 +175,7 @@ export default function Home() {
     'josh': {
       name: 'Josh Pierce',
       title: 'Executive Pastor',
-      bio: 'Josh serves as Executive Pastor, leading ministries and strategic initiatives to help grow and shepherd the Grace Woodlands community.',
+      bio: 'Josh serves as Executive Pastor, leading ministries and strategic initiatives to help grow and shepherd the Grace Church community.',
       email: ''
     },
     'sam-thomas': {
@@ -123,7 +187,7 @@ export default function Home() {
     'jason-nelson': {
       name: 'Dr. Jason J. Nelson',
       title: 'Associate Pastor',
-      bio: 'Dr. Jason J. Nelson supports pastoral leadership and contributes to teaching and ministry development at Grace Woodlands.',
+      bio: 'Dr. Jason J. Nelson supports pastoral leadership and contributes to teaching and ministry development at Grace Church.',
       email: ''
     },
     'brooke': {
@@ -201,8 +265,8 @@ export default function Home() {
         <div className="container">
           <Link href="/">
             <img
-              src="https://gracewoodlands.com/wp-content/uploads/2021/09/Grace-logo-for-web-white.png"
-              alt="Grace Woodlands Church - The Woodlands, Texas"
+              src="/images/general/Grace Church LOGO wide.webp"
+              alt="Grace Church - The Woodlands, Texas"
               className="logo"
             />
           </Link>
@@ -265,7 +329,7 @@ export default function Home() {
         <div className="container">
           <div className="hero-copy">
             <p className="eyebrow">SUNDAYS AT 9AM & 11AM</p>
-            <h1>GRACE WOODLANDS</h1>
+            <h1>JOIN US AT GRACE</h1>
             <p className="subhead" style={{ fontWeight: 800, letterSpacing: '0.6px' }}>A COURAGEOUS CHRISTIAN CHURCH</p>
             <p className="subhead">If you are looking for a church that prioritizes the presence of God, believes in the power of prayer, unashamedly preaches God’s Word, and stands up for Godly moral values… GRACE IS FOR YOU!</p>
           </div>
@@ -293,7 +357,7 @@ export default function Home() {
                   <div className="video-link" onClick={handlePlayButtonClick} style={{ cursor: 'pointer' }}>
                     <img
                       src="https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg"
-                      alt="Grace Woodlands church building in The Woodlands, Texas"
+                      alt="Grace Church building in The Woodlands, Texas"
                       style={{
                         width: '100%',
                         height: '100%',
@@ -313,7 +377,7 @@ export default function Home() {
                 {isIntroVideoPlaying && (
                   <div className="video-embed" style={{ position: 'relative', paddingTop: '56.25%' }}>
                     <iframe
-                      title="Grace Woodlands Intro"
+                      title="Grace Church Intro"
                       src="https://player.vimeo.com/video/1130496866?autoplay=1&muted=0&title=0&byline=0&portrait=0"
                       style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                       frameBorder="0"
@@ -325,13 +389,13 @@ export default function Home() {
               </div>
             </div>
             <div className="intro-copy">
-              <h2 className="section-title tight">GRACE WOODLANDS</h2>
+              <h2 className="section-title tight">GRACE CHURCH</h2>
               <div className="kicker">THE WOODLANDS, TX</div>
-              <p>Join us at Grace Woodlands this Sunday at 9am and 11am! We invite you to Grace to experience a fresh outpouring of the presence of God in one of our services.</p>
+              <p>Join us at Grace Church this Sunday at 9am and 11am! We invite you to Grace to experience a fresh outpouring of the presence of God in one of our services.</p>
               <p>Plus, there are 50+ groups and classes to help you and your family grow in your faith, be equipped with a greater understanding of God's Word, and learn more about His purpose for your life.</p>
               <p>With ministries for everyone… kids, teenagers, men, women, young adults, married couples, singles, seniors, military veterans, and more… you'll find your place at Grace!</p>
               <div className="launch-announcement">
-                <p className="launch-title">Join us Every Sunday at 9AM & 11AM</p>
+                <p className="launch-title">Join Us This Sunday @ 9am or 11am</p>
               </div>
               <button onClick={() => setShowPlanVisitModal(true)} className="pill signup-btn-red">PLAN YOUR VISIT</button>
             </div>
@@ -382,25 +446,24 @@ export default function Home() {
         <div className="container">
           <div className="two-col">
             <div className="about-copy">
-              <h3>Welcome to Grace Woodlands</h3>
-              <p>Grace Woodlands is a vibrant, multigenerational church in The Woodlands, Texas, where people from all walks of life come together to worship God, grow in faith, and serve the community.</p>
-              <p>We believe in the power of God's Word, the importance of prayer, and the transformative presence of the Holy Spirit. Our mission is to help you discover your purpose, develop your faith, and deploy your gifts to make a difference in the world.</p>
-              <p>Whether you're new to church or have been following Jesus for years, you'll find a welcoming community at Grace Woodlands where you can belong, believe, and become all that God has called you to be.</p>
-              <p>We are a multigenerational, multiracial church that believes in the Bible, fervently worships, practices the power of prayer, pursues authentic relationships with one another, and stands for Godly moral values in our culture.</p>
-              <p>We invite you and your family to join us at Grace ... just minutes from anywhere in The Woodlands area.</p>
+              <h3>Welcome to Grace Church</h3>
+              <p>Grace Church is a courageous, multigenerational, family-focused church that is unapologetically biblical and conservative. We worship passionately, pray boldly, stand for truth, and look like Heaven. With ministries for every member of your family, we believe God's presence still transforms lives—and that every Christian should boldly impact the culture with their voice and their vote… making America great and Godly once again.</p>
+              <p>We believe that in our fracturing society, every child deserves the foundation of a loving mom and dad shaping their life. We believe in the invaluable influence of grandparents pouring into their grandchildren, and the opportunity to grow up experiencing the power and presence of God. We are boldly pro-life because every life is sacred and created in the image of God, and we know God has a plan and purpose for each one of us -- and we want to help you discover and live out yours.</p>
+              <p>We offer groups, classes, and pathways designed to help you grow deeper in your faith, build real relationships, and strengthen your walk with God. Whether you are new to Christ or mature in your faith, you'll find a place to grow at Grace.</p>
+              <p>We'd love for you to join us this Sunday and experience what God is doing at Grace -- hope to see you and your family soon!</p>
             </div>
             <div className="about-media">
               <div className="media-collage">
                 <div className="about-image wide">
-                  <img src="/images/general/steve smile.jpeg" alt="Steve and Becky Riggle - Founding Pastors of Grace Woodlands" />
+                  <img src="/images/general/steve smile.jpeg" alt="Steve and Becky Riggle - Founding Pastors of Grace Church" />
                 </div>
 
                 <div className="about-image">
-                  <img src="/images/general/GATC - girls1.jpeg" alt="Grace Woodlands community worship and fellowship in The Woodlands, TX" />
+                  <img src="/images/general/GATC - girls1.jpeg" alt="Grace Church community worship and fellowship in The Woodlands, TX" />
                 </div>
 
                 <div className="about-image">
-                  <img src="https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg" alt="Grace Woodlands church building located at 24400 Interstate 45 N, The Woodlands, TX 77386" />
+                  <img src="https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg" alt="Grace Church building located at 24400 Interstate 45 N, The Woodlands, TX 77386" />
                 </div>
               </div>
             </div>
@@ -424,11 +487,38 @@ export default function Home() {
                     width="797"
                     height="705"
                     src="https://gracewoodlands.com/wp-content/uploads/2025/09/FFFFLogo.png"
-                    alt="Family, Faith, Friends, and Freedom - Grace Woodlands values"
+                    alt="Family, Faith, Friends, and Freedom - Grace Church values"
                     title="Family, Faith, Friends, and Freedom"
                   />
                 </span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* OUR FOUNDATION */}
+      <section className="foundation scroll-animate">
+        <div className="container">
+          <div className="foundation-content">
+            <h2>OUR FOUNDATION</h2>
+            <h3>WHO WE ARE</h3>
+            <div className="foundation-list">
+              <p>Unapologetically Biblical.</p>
+              <p>Unashamedly bold and courageous.</p>
+              <p>Pro-life, pro-family, pro-freedom.</p>
+              <p>Rooted in prayer and the power of the Holy Spirit.</p>
+              <p>Committed to building strong families and Godly marriages.</p>
+              <p>Multigenerational and multiracial, united in Christ.</p>
+              <p>Raising up bold pastors and leaders for this moment in America.</p>
+              <p>Passionate in worship, lifting high the name of Jesus.</p>
+              <p>Supporting missions in 130 nations through Grace International.</p>
+              <p>Standing for truth and righteousness in our culture and nation.</p>
+              <p>Engaged in our civic duty—voting biblical values and leading with conviction.</p>
+            </div>
+            <div className="foundation-statement">
+              <p className="bold">We speak up. We stand up.</p>
+              <p className="bold">We boldly proclaim God's Truth.</p>
             </div>
           </div>
         </div>
@@ -440,7 +530,7 @@ export default function Home() {
             <div>
               <Image
                 src="/images/church/Grace-Building-980x553-small.webp"
-                alt="Grace Woodlands church building - 24400 Interstate 45 N, The Woodlands, TX 77386"
+                alt="Grace Church building - 24400 Interstate 45 N, The Woodlands, TX 77386"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
                 style={{ objectFit: 'cover' }}
@@ -481,14 +571,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* OUR TEAM */}
+      {/* OUR TEAM - HIDDEN FOR NOW */}
+      {/* 
       <section className="team" id="team">
         <div className="container">
           <h3 style={{ textAlign: 'center', marginBottom: 'clamp(30px, 5vw, 50px)' }}>OUR TEAM</h3>
           <div className="team-grid">
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('steve-becky')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/steve-becky-09-25-thumbnail-thumbnail.webp" alt="Steve and Becky Riggle - Founding Pastors of Grace Woodlands Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/steve-becky-09-25-thumbnail-thumbnail.webp" alt="Steve and Becky Riggle - Founding Pastors of Grace Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Steve & Becky Riggle</div>
@@ -501,7 +592,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('josh')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/josh-pierce-staff-small.jpeg" alt="Josh Pierce - Executive Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/josh-pierce-staff-small.jpeg" alt="Josh Pierce - Executive Pastor at Grace Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Josh Pierce</div>
@@ -512,7 +603,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('sam-thomas')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/sam-thomas-staff-small.jpeg" alt="Dr. Sam Thomas - Teaching Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/sam-thomas-staff-small.jpeg" alt="Dr. Sam Thomas - Teaching Pastor at Grace Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Dr. Sam Thomas</div>
@@ -523,7 +614,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('jason-nelson')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/jason-nelson-staff-small.jpeg" alt="Dr. Jason J. Nelson - Associate Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/jason-nelson-staff-small.jpeg" alt="Dr. Jason J. Nelson - Associate Pastor at Grace Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Dr. Jason J. Nelson</div>
@@ -534,7 +625,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('brooke')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/brooke-pierce-staff-small.jpeg" alt="Brooke Pierce - Outreach Pastor and Women's Ministry Leader at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/brooke-pierce-staff-small.jpeg" alt="Brooke Pierce - Outreach Pastor and Women's Ministry Leader at Grace Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Brooke Pierce</div>
@@ -545,7 +636,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('rachele')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/rachele-karmout-staff-small.jpeg" alt="Rachele Karmout - Family Life Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/rachele-karmout-staff-small.jpeg" alt="Rachele Karmout - Family Life Pastor at Grace Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Rachele Karmout</div>
@@ -556,7 +647,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('rachel')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/rachel-santiago-staff-small.jpeg" alt="Rachel Santiago - Groups and Events Pastor at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/rachel-santiago-staff-small.jpeg" alt="Rachel Santiago - Groups and Events Pastor at Grace Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Rachel Santiago</div>
@@ -567,7 +658,7 @@ export default function Home() {
 
             <div className="minicard team-member-card">
               <div className="placeholder headshot" onClick={() => openModal('stu-debbe')} style={{ cursor: 'pointer', position: 'relative', overflow: 'hidden', borderRadius: '6px' }}>
-                <img src="/images/team/stu-debbe-staff-small.jpeg" alt="Stu and Debbe Johnson - Associate Pastors at Grace Woodlands" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img src="/images/team/stu-debbe-staff-small.jpeg" alt="Stu and Debbe Johnson - Associate Pastors at Grace Church" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
               <div className="caption">
                 <div>Stu & Debbe Johnson</div>
@@ -578,8 +669,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* A Few Grace Messages */}
+      {/* A Few Grace Messages - HIDDEN FOR NOW */}
+      {/* 
       <section className="grace-messages">
         <div className="container">
           <h3 style={{ textAlign: 'center', marginBottom: 'clamp(30px, 5vw, 50px)' }}>A Few Messages at Grace</h3>
@@ -649,6 +742,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* CONTACT SECTION */}
       <section className="contact-section scroll-animate" id="contact">
@@ -790,11 +884,11 @@ export default function Home() {
               {/* Brand / Description / Newsletter */}
               <div className="footer-brand">
                 <img
-                  src="https://gracewoodlands.com/wp-content/uploads/2021/09/Grace-logo-for-web-white.png"
-                  alt="Grace Woodlands Church - The Woodlands, Texas"
+                  src="/images/general/Grace Church LOGO wide.webp"
+                  alt="Grace Church - The Woodlands, Texas"
                   className="footer-logo"
                 />
-                <p className="footer-description">Grace Woodlands is a multigenerational church in The Woodlands, TX. Join us Sundays to worship, grow in community, and serve our city.</p>
+                <p className="footer-description">Grace Church is a multigenerational church in The Woodlands, TX. Join us Sundays to worship, grow in community, and serve our city.</p>
 
                 <div className="footer-signup">
                   <h4>Stay Connected</h4>
@@ -877,7 +971,7 @@ export default function Home() {
               <div className="footer-section">
                 <h4>Related Ministries</h4>
                 <ul className="footer-links">
-                  <li><a href="https://www.gracewoodlands.com" target="_blank" rel="noopener noreferrer">Grace Woodlands</a></li>
+                  <li><a href="https://www.gracewoodlands.com" target="_blank" rel="noopener noreferrer">Grace Church</a></li>
                   <li><a href="https://www.gracechurches.tv" target="_blank" rel="noopener noreferrer">Grace International</a></li>
                   <li><a href="https://www.forgepastors.com" target="_blank" rel="noopener noreferrer">Forge Pastors</a></li>
                   <li><a href="https://www.theforgejournal.com" target="_blank" rel="noopener noreferrer">Forge Journal</a></li>
@@ -890,7 +984,7 @@ export default function Home() {
 
           <div className="footer-bottom">
             <div className="footer-copyright">
-              <small>&copy; {new Date().getFullYear()} Grace Woodlands. All rights reserved.</small>
+              <small>&copy; {new Date().getFullYear()} Grace Church. All rights reserved.</small>
             </div>
               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
               <a href="https://gracewoodlands.com/privacy-policy/" className="footer-link" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
@@ -960,7 +1054,7 @@ export default function Home() {
               <div className="plan-visit-confirmation">
                 <div className="confirmation-icon">✓</div>
                 <h2>Thank You!</h2>
-                <p>We're excited to see you at Grace Woodlands!</p>
+                <p>We're excited to see you at Grace Church!</p>
                 <p className="confirmation-details">
                   We've received your information and will be in touch soon at <strong>{planVisitData.phone}</strong> or <strong>{planVisitData.email}</strong>.
                 </p>

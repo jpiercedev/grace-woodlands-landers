@@ -4,12 +4,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://gracewoodlands.com'),
   title: {
-    default: "Grace Woodlands - Church in The Woodlands, Texas",
-    template: "%s | Grace Woodlands"
+    default: "Grace Church - Church in The Woodlands, Texas",
+    template: "%s | Grace Church"
   },
-  description: "Join Grace Woodlands every Sunday at 9am and 11am in The Woodlands, TX. A vibrant, multigenerational church where you can worship God, grow in faith, and serve the community.",
+  description: "Join Grace Church every Sunday at 9am and 11am in The Woodlands, TX. A vibrant, multigenerational church where you can worship God, grow in faith, and serve the community.",
   keywords: [
-    'Grace Woodlands',
+    'Grace Church',
     'church The Woodlands TX',
     'The Woodlands church',
     'church near me The Woodlands',
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     'church Interstate 45',
     'Montgomery County church'
   ],
-  authors: [{ name: 'Grace Woodlands' }],
-  creator: 'Grace Woodlands',
-  publisher: 'Grace Woodlands',
+  authors: [{ name: 'Grace Church' }],
+  creator: 'Grace Church',
+  publisher: 'Grace Church',
   formatDetection: {
     email: false,
     address: false,
@@ -40,15 +40,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://gracewoodlands.com',
-    siteName: 'Grace Woodlands',
-    title: 'Grace Woodlands - Church in The Woodlands, Texas',
-    description: 'Join Grace Woodlands every Sunday at 9am and 11am. Experience a fresh outpouring of the presence of God in The Woodlands, TX.',
+    siteName: 'Grace Church',
+    title: 'Grace Church - Church in The Woodlands, Texas',
+    description: 'Join Grace Church every Sunday at 9am and 11am. Experience a fresh outpouring of the presence of God in The Woodlands, TX.',
     images: [
       {
         url: 'https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building.jpg',
         width: 1200,
         height: 677,
-        alt: 'Grace Woodlands church building in The Woodlands, Texas',
+        alt: 'Grace Church building in The Woodlands, Texas',
       },
     ],
   },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@gracewoodlands',
     creator: '@gracewoodlands',
-    title: 'Grace Woodlands - Church in The Woodlands, Texas',
+    title: 'Grace Church - Church in The Woodlands, Texas',
     description: 'Join us every Sunday at 9am and 11am in The Woodlands, TX.',
     images: ['https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building.jpg'],
   },
@@ -94,7 +94,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Church",
-              "name": "Grace Woodlands",
+              "name": "Grace Church",
               "alternateName": "Grace Church Woodlands",
               "description": "A vibrant, multigenerational church in The Woodlands, Texas where people from all walks of life come together to worship God, grow in faith, and serve the community.",
               "url": "https://gracewoodlands.com",

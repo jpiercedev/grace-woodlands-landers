@@ -2,10 +2,10 @@ import { Metadata } from 'next'
 import Home from '@/components/pages/Home'
 
 export const metadata: Metadata = {
-  title: 'Grace Woodlands - Church in The Woodlands, Texas | Sunday Services 9am & 11am',
-  description: 'Join Grace Woodlands every Sunday at 9am and 11am in The Woodlands, TX. A vibrant, multigenerational church where you can worship God, grow in faith, and serve the community. Located at 24400 Interstate 45 N.',
+  title: 'Grace Church - Church in The Woodlands, Texas | Sunday Services 9am & 11am',
+  description: 'Join Grace Church every Sunday at 9am and 11am in The Woodlands, TX. A vibrant, multigenerational church where you can worship God, grow in faith, and serve the community. Located at 24400 Interstate 45 N.',
   keywords: [
-    'Grace Woodlands',
+    'Grace Church',
     'church The Woodlands TX',
     'The Woodlands church',
     'church near me The Woodlands',
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     'youth ministry The Woodlands',
     'small groups The Woodlands'
   ],
-  authors: [{ name: 'Grace Woodlands' }],
-  creator: 'Grace Woodlands',
-  publisher: 'Grace Woodlands',
+  authors: [{ name: 'Grace Church' }],
+  creator: 'Grace Church',
+  publisher: 'Grace Church',
   formatDetection: {
     email: false,
     address: false,
@@ -43,16 +43,16 @@ export const metadata: Metadata = {
     canonical: 'https://gracewoodlands.com',
   },
   openGraph: {
-    title: 'Grace Woodlands - Church in The Woodlands, Texas | Sunday Services 9am & 11am',
-    description: 'Join Grace Woodlands every Sunday at 9am and 11am in The Woodlands, TX. A vibrant, multigenerational church where you can worship God, grow in faith, and serve the community.',
+    title: 'Grace Church - Church in The Woodlands, Texas | Sunday Services 9am & 11am',
+    description: 'Join Grace Church every Sunday at 9am and 11am in The Woodlands, TX. A vibrant, multigenerational church where you can worship God, grow in faith, and serve the community.',
     url: 'https://gracewoodlands.com',
-    siteName: 'Grace Woodlands',
+    siteName: 'Grace Church',
     images: [
       {
         url: 'https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building.jpg',
         width: 1200,
         height: 677,
-        alt: 'Grace Woodlands church building in The Woodlands, Texas - 24400 Interstate 45 N',
+        alt: 'Grace Church building in The Woodlands, Texas - 24400 Interstate 45 N',
       },
     ],
     locale: 'en_US',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@gracewoodlands',
     creator: '@gracewoodlands',
-    title: 'Grace Woodlands - Church in The Woodlands, Texas',
+    title: 'Grace Church - Church in The Woodlands, Texas',
     description: 'Join us every Sunday at 9am and 11am in The Woodlands, TX. A vibrant, multigenerational church with ministries for everyone.',
     images: ['https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building.jpg'],
   },

@@ -1,7 +1,7 @@
-# Grace Woodlands Landers - Deployment
+# Grace Church Landers - Deployment
 
 ## Project Overview
-Grace Woodlands Landers website built with Next.js 16.0.1 and React 19.2.0.
+Grace Church Landers website built with Next.js 16.0.1 and React 19.2.0.
 
 ## Repository
 - **GitHub:** https://github.com/jpiercedev/grace-woodlands-landers

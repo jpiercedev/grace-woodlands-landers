@@ -1,16 +1,16 @@
-# SEO Optimization Summary - Grace Woodlands
+# SEO Optimization Summary - Grace Church
 
 ## Overview
-Comprehensive SEO optimization completed for Grace Woodlands church website. All SEO elements now correctly reflect Grace Woodlands in The Woodlands, Texas (not Grace at The Circle in Orange, CA).
+Comprehensive SEO optimization completed for Grace Church website. All SEO elements now correctly reflect Grace Church in The Woodlands, Texas (not Grace at The Circle in Orange, CA).
 
 ## ✅ Completed SEO Enhancements
 
 ### 1. **Metadata & Page Titles**
 - **Updated**: `app/layout.tsx` and `app/page.tsx`
-- **Primary Title**: "Grace Woodlands - Church in The Woodlands, Texas | Sunday Services 9am & 11am"
+- **Primary Title**: "Grace Church - Church in The Woodlands, Texas | Sunday Services 9am & 11am"
 - **Description**: Enhanced with location-specific details and service times
 - **Keywords**: Expanded to 25+ targeted keywords including:
-  - Grace Woodlands
+  - Grace Church
   - church The Woodlands TX
   - church near me The Woodlands
   - Christian church The Woodlands
@@ -46,8 +46,8 @@ Enhanced structured data in `app/layout.tsx` with:
 ### 4. **New SEO Files Created**
 
 #### `app/manifest.ts` - PWA Manifest
-- App name: "Grace Woodlands - Church in The Woodlands, Texas"
-- Short name: "Grace Woodlands"
+- App name: "Grace Church - Church in The Woodlands, Texas"
+- Short name: "Grace Church"
 - Theme colors matching brand (gold: #AE8F63)
 - Standalone display mode for mobile
 
@@ -66,25 +66,25 @@ Enhanced structured data in `app/layout.tsx` with:
 Updated all image alt attributes with SEO-optimized descriptions:
 
 **Logo Images**:
-- "Grace Woodlands Church - The Woodlands, Texas"
+- "Grace Church - The Woodlands, Texas"
 
 **Building Images**:
-- "Grace Woodlands church building in The Woodlands, Texas"
-- "Grace Woodlands church building - 24400 Interstate 45 N, The Woodlands, TX 77386"
+- "Grace Church building in The Woodlands, Texas"
+- "Grace Church building - 24400 Interstate 45 N, The Woodlands, TX 77386"
 
 **Team Photos**:
-- "Steve and Becky Riggle - Founding Pastors of Grace Woodlands Church"
-- "Josh Pierce - Executive Pastor at Grace Woodlands"
-- "Dr. Sam Thomas - Teaching Pastor at Grace Woodlands"
-- "Dr. Jason J. Nelson - Associate Pastor at Grace Woodlands"
-- "Brooke Pierce - Outreach Pastor and Women's Ministry Leader at Grace Woodlands"
-- "Rachele Karmout - Family Life Pastor at Grace Woodlands"
-- "Rachel Santiago - Groups and Events Pastor at Grace Woodlands"
-- "Stu and Debbe Johnson - Associate Pastors at Grace Woodlands"
+- "Steve and Becky Riggle - Founding Pastors of Grace Church"
+- "Josh Pierce - Executive Pastor at Grace Church"
+- "Dr. Sam Thomas - Teaching Pastor at Grace Church"
+- "Dr. Jason J. Nelson - Associate Pastor at Grace Church"
+- "Brooke Pierce - Outreach Pastor and Women's Ministry Leader at Grace Church"
+- "Rachele Karmout - Family Life Pastor at Grace Church"
+- "Rachel Santiago - Groups and Events Pastor at Grace Church"
+- "Stu and Debbe Johnson - Associate Pastors at Grace Church"
 
 **Community Images**:
-- "Grace Woodlands community worship and fellowship in The Woodlands, TX"
-- "Family, Faith, Friends, and Freedom - Grace Woodlands values"
+- "Grace Church community worship and fellowship in The Woodlands, TX"
+- "Family, Faith, Friends, and Freedom - Grace Church values"
 
 **Video Thumbnails**:
 - Descriptive alt text for all sermon video thumbnails
@@ -208,7 +208,7 @@ To complete SEO setup, consider:
 
 ## ✨ Summary
 
-This SEO optimization transforms the Grace Woodlands website into a powerhouse landing page optimized for:
+This SEO optimization transforms the Grace Church website into a powerhouse landing page optimized for:
 - **Local search** in The Woodlands, TX area
 - **Social media sharing** with rich preview cards
 - **Search engine crawling** with comprehensive structured data
@@ -222,5 +222,5 @@ All changes maintain the existing content, copy, and images while dramatically i
 **Optimization Date**: November 8, 2025  
 **Next.js Version**: 16.0.1  
 **Location**: The Woodlands, Texas 77386  
-**Church**: Grace Woodlands
+**Church**: Grace Church
 
