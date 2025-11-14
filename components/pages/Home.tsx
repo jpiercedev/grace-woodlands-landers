@@ -343,7 +343,7 @@ export default function Home() {
                 <a href="#about" className="nav-link">ABOUT</a>
                 {/* <a href="#team" className="nav-link">OUR TEAM</a> */}
                 <a href="https://gracewoodlands.com/ministries/" target="_blank" rel="noopener noreferrer" className="nav-link">MINISTRIES</a>
-                <a href="https://gracewoodlands.com/upcoming-events/" className="nav-link">EVENTS</a>
+                <a href="https://gracewoodlands.com/" target="_blank" rel="noopener noreferrer" className="nav-link">CHURCH WEBSITE</a>
                 <a href="#contact" className="nav-link">CONTACT</a>
                 <a href="https://gracewoodlands.com/give" target="_blank" rel="noopener noreferrer" className="nav-link">GIVE</a>
               </nav>
@@ -368,7 +368,7 @@ export default function Home() {
                 <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>ABOUT</a>
                 {/* <a href="#team" onClick={() => setIsMobileMenuOpen(false)}>OUR TEAM</a> */}
                 <a href="https://gracewoodlands.com/ministries/" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>MINISTRIES</a>
-                <a href="https://gracewoodlands.com/upcoming-events/" onClick={() => setIsMobileMenuOpen(false)}>EVENTS</a>
+                <a href="https://gracewoodlands.com/" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>CHURCH WEBSITE</a>
                 <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>CONTACT</a>
                 <a href="https://gracewoodlands.com/give" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>GIVE</a>
               </nav>
@@ -408,7 +408,7 @@ export default function Home() {
           <Link href="#about" className="pill gold">ABOUT GRACE</Link>
           {/* <Link href="#team" className="pill gold">OUR TEAM</Link> */}
           <a href="https://gracewoodlands.com/ministries/" target="_blank" rel="noopener noreferrer" className="pill gold">MINISTRIES</a>
-          <a href="https://gracewoodlands.com/upcoming-events/" className="pill gold" target="_blank" rel="noopener noreferrer">EVENTS</a>
+          <a href="https://gracewoodlands.com/" className="pill gold" target="_blank" rel="noopener noreferrer">CHURCH WEBSITE</a>
           <a href="https://gracewoodlands.com/give" target="_blank" rel="noopener noreferrer" className="pill gold">GIVE</a>
         </div>
       </nav>
@@ -464,6 +464,54 @@ export default function Home() {
               </div>
               <button onClick={() => setShowPlanVisitModal(true)} className="pill signup-btn-red">LET US KNOW YOU'RE COMING</button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* LOCATION & SERVICES */}
+      <section className="location scroll-animate" id="location">
+        <div className="container">
+          <div className="location-image">
+            <div>
+              <Image
+                src="/images/church/Grace-Building-980x553-small.webp"
+                alt="Grace Church building - 24400 Interstate 45 N, The Woodlands, TX 77386"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          </div>
+          <div className="location-copy">
+            <h3>LOCATION & SERVICES</h3>
+            <div className="service-info">
+              <div className="service-time">
+                <h4>Service Times</h4>
+                <p>Sundays at 9AM & 11AM</p>
+              </div>
+              <div className="address-info">
+                <h4>Address</h4>
+                <address>
+                  <a
+                    href="https://www.google.com/maps/dir/?api=1&destination=24400+Interstate+45+N+The+Woodlands+TX+77386"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="address-link"
+                  >
+                    24400 Interstate 45 N<br />
+                    The Woodlands, TX 77386
+                  </a>
+                </address>
+              </div>
+            </div>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=24400+Interstate+45+N+The+Woodlands+TX+77386"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pill gold"
+            >
+              Get Directions
+            </a>
           </div>
         </div>
       </section>
@@ -585,53 +633,6 @@ export default function Home() {
               <p className="bold">We speak up. We stand up.</p>
               <p className="bold">We boldly proclaim God's Truth.</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="location scroll-animate" id="location">
-        <div className="container">
-          <div className="location-image">
-            <div>
-              <Image
-                src="/images/church/Grace-Building-980x553-small.webp"
-                alt="Grace Church building - 24400 Interstate 45 N, The Woodlands, TX 77386"
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                style={{ objectFit: 'cover' }}
-              />
-            </div>
-          </div>
-          <div className="location-copy">
-            <h3>LOCATION & SERVICES</h3>
-            <div className="service-info">
-              <div className="service-time">
-                <h4>Service Times</h4>
-                <p>Sundays at 9AM & 11AM</p>
-              </div>
-              <div className="address-info">
-                <h4>Address</h4>
-                <address>
-                  <a
-                    href="https://www.google.com/maps/dir/?api=1&destination=24400+Interstate+45+N+The+Woodlands+TX+77386"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="address-link"
-                  >
-                    24400 Interstate 45 N<br />
-                    The Woodlands, TX 77386
-                  </a>
-                </address>
-              </div>
-            </div>
-            <a
-              href="https://www.google.com/maps/dir/?api=1&destination=24400+Interstate+45+N+The+Woodlands+TX+77386"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="pill gold"
-            >
-              Get Directions
-            </a>
           </div>
         </div>
       </section>
