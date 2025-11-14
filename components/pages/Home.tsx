@@ -462,7 +462,7 @@ export default function Home() {
               <div className="launch-announcement">
                 <p className="launch-title">Join Us This Sunday @ 9am or 11am</p>
               </div>
-              <button onClick={() => setShowPlanVisitModal(true)} className="pill signup-btn-red">PLAN YOUR VISIT</button>
+              <button onClick={() => setShowPlanVisitModal(true)} className="pill signup-btn-red">LET US KNOW YOU'RE COMING</button>
             </div>
           </div>
         </div>
@@ -1066,7 +1066,7 @@ export default function Home() {
             
             {!planVisitConfirmed ? (
               <>
-                <h2>Plan Your Visit</h2>
+                <h2>Let Us Know You're Coming</h2>
                 <p className="modal-subtitle">Let us know you're coming! Fill in your details below.</p>
                 
                 <form className="plan-visit-form" onSubmit={handlePlanVisitSubmit}>
@@ -1110,7 +1110,7 @@ export default function Home() {
                   </div>
                   
                   <button type="submit" className="plan-visit-submit-btn" disabled={planVisitSubmitting}>
-                    {planVisitSubmitting ? 'SUBMITTING...' : 'CONFIRM VISIT'}
+                    {planVisitSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
                   </button>
                 </form>
               </>
