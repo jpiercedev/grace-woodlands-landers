@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import FaviconRefresh from "@/components/FaviconRefresh";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://gracewoodlands.com'),
@@ -180,6 +181,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <FaviconRefresh />
         <div className="page">
           {children}
         </div>

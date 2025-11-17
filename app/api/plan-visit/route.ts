@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       console.log('Attempting to send email via Resend...')
       const result = await resend.emails.send({
         from: 'Grace Woodlands <notifications@gracewoodlands.com>',
-        to: [process.env.NOTIFICATION_EMAIL!],
+        to: ['jonathan@jpierce.dev', 'jpierce@gracewoodlands.com'],
         subject: '🔥 HIGH INTENT LEAD - Plan Your Visit',
         html: `
           <!DOCTYPE html>
