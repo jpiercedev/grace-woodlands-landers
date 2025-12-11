@@ -5892,6 +5892,41 @@ section.contact-section, .contact-section {
 }
 
 /* ============================================
+   MOBILE EVENT HEADER - Shows Tag & Name first on mobile
+   ============================================ */
+
+/* Hidden on desktop - shown on mobile */
+.event-header-mobile {
+  display: none;
+  text-align: center;
+  color: #fff;
+}
+
+.event-header-mobile h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 20px 0;
+  color: #fff;
+}
+
+/* Desktop-only elements - hidden on mobile */
+@media (max-width: 968px) {
+  .event-header-mobile {
+    display: block;
+    order: -2;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .event-tag-desktop,
+  .event-title-desktop {
+    display: none !important;
+  }
+}
+
+/* ============================================
    CAR SHOW - MODERN DESIGN
    ============================================ */
 
@@ -6020,13 +6055,18 @@ section.contact-section, .contact-section {
 /* Responsive for Car Show */
 @media (max-width: 968px) {
   .car-show-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     text-align: center;
   }
 
   .car-show-image {
-    order: -1;
+    order: 1;
+  }
+
+  .car-show-content {
+    order: 2;
   }
 
   .car-show-image-wrapper img {
@@ -6224,13 +6264,18 @@ section.contact-section, .contact-section {
 /* Responsive */
 @media (max-width: 968px) {
   .polar-express-modern-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     text-align: center;
   }
 
   .polar-express-modern-image {
-    order: -1;
+    order: 1;
+  }
+
+  .polar-express-modern-content {
+    order: 2;
   }
 
   .polar-express-image-wrapper img {
@@ -6727,22 +6772,32 @@ section.contact-section, .contact-section {
 @media (max-width: 968px) {
   .modern-event-container,
   .christmas-eve-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     text-align: center;
   }
 
   .modern-event-reverse {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .modern-event-reverse .modern-image-stack,
   .modern-event-reverse .photo-grid-4 {
-    order: -1;
+    order: 1;
+  }
+
+  .modern-event-reverse .modern-event-content {
+    order: 2;
   }
 
   .christmas-eve-image {
     order: 1;
+  }
+
+  .christmas-eve-content {
+    order: 2;
   }
 
   .modern-event-light h2,

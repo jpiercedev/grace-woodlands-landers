@@ -229,6 +229,12 @@ export default function ChristmasLanding() {
       {/* CAR SHOW SECTION */}
       <section className="car-show-modern" id="car-show">
         <div className="car-show-container">
+          {/* Event Header - Tag & Name (appears first on mobile) */}
+          <div className="event-header-mobile">
+            <span className="event-tag-teal">🚗 Community Event</span>
+            <h2>Christmas Family<br />Car Show At Grace</h2>
+          </div>
+
           {/* Left side - Images */}
           <div className="car-show-image">
             <div className="photo-grid-4">
@@ -241,8 +247,8 @@ export default function ChristmasLanding() {
 
           {/* Right side - Content */}
           <div className="car-show-content">
-            <span className="event-tag-teal">🚗 Community Event</span>
-            <h2>Christmas Family<br />Car Show At Grace</h2>
+            <span className="event-tag-teal event-tag-desktop">🚗 Community Event</span>
+            <h2 className="event-title-desktop">Christmas Family<br />Car Show At Grace</h2>
 
             <div className="event-meta-modern">
               <div className="meta-item">
@@ -286,6 +292,12 @@ export default function ChristmasLanding() {
       {/* FAMILY CHRISTMAS SECTION */}
       <section className="modern-event-section modern-event-dark" id="family-christmas">
         <div className="modern-event-container modern-event-reverse">
+          {/* Event Header - Tag & Name (appears first on mobile) */}
+          <div className="event-header-mobile">
+            <span className="event-tag">🎄 Family Service</span>
+            <h2>Family Christmas<br />at Grace</h2>
+          </div>
+
           <div className="photo-grid-4">
             <img src="/images/raw/family christmas web/0F8A4374-Enhanced-NR.jpg" alt="Family Christmas" className="photo-grid-main" />
             <img src="/images/raw/family christmas web/0F8A4428-Enhanced-NR.jpg" alt="Family Christmas" className="photo-grid-item" />
@@ -294,8 +306,8 @@ export default function ChristmasLanding() {
           </div>
 
           <div className="modern-event-content">
-            <span className="event-tag">🎄 Family Service</span>
-            <h2>Family Christmas<br />at Grace</h2>
+            <span className="event-tag event-tag-desktop">🎄 Family Service</span>
+            <h2 className="event-title-desktop">Family Christmas<br />at Grace</h2>
 
             <div className="event-meta-modern">
               <div className="meta-item">
@@ -333,6 +345,12 @@ export default function ChristmasLanding() {
       {/* POLAR EXPRESS SECTION */}
       <section className="polar-express-modern" id="polar-express">
         <div className="polar-express-modern-container">
+          {/* Event Header - Tag & Name (appears first on mobile) */}
+          <div className="event-header-mobile">
+            <span className="event-tag">🎄 Special Event</span>
+            <h2>The Polar Express<br />Movie Experience</h2>
+          </div>
+
           {/* Left side - Images */}
           <div className="polar-express-modern-image">
             <div className="photo-grid-4">
@@ -345,8 +363,8 @@ export default function ChristmasLanding() {
 
           {/* Right side - Content */}
           <div className="polar-express-modern-content">
-            <span className="event-tag">🎄 Special Event</span>
-            <h2>The Polar Express<br />Movie Experience</h2>
+            <span className="event-tag event-tag-desktop">🎄 Special Event</span>
+            <h2 className="event-title-desktop">The Polar Express<br />Movie Experience</h2>
 
             <div className="event-meta-modern">
               <div className="meta-item">
@@ -390,9 +408,24 @@ export default function ChristmasLanding() {
       {/* CHRISTMAS EVE SECTION */}
       <section className="christmas-eve-modern" id="christmas-eve">
         <div className="christmas-eve-container">
-          <div className="christmas-eve-content">
+          {/* Event Header - Tag & Name (appears first on mobile) */}
+          <div className="event-header-mobile">
             <span className="event-tag-gold">✨ Christmas Eve</span>
             <h2>Christmas Eve<br />Services</h2>
+          </div>
+
+          <div className="christmas-eve-image">
+            <div className="photo-grid-4">
+              <img src="/images/raw/Grace Christmas Photos/DSC02639-Enhanced-NR.jpg" alt="Christmas Eve" className="photo-grid-main" />
+              <img src="/images/raw/Grace Christmas Photos/DSC03056-Enhanced-NR.jpg" alt="Christmas Eve" className="photo-grid-item" />
+              <img src="/images/raw/Grace Christmas Photos/DSC02693-Enhanced-NR.jpg" alt="Christmas Eve" className="photo-grid-item" />
+              <img src="/images/raw/Grace Christmas Photos/DSC02798-Enhanced-NR.jpg" alt="Christmas Eve" className="photo-grid-item" />
+            </div>
+          </div>
+
+          <div className="christmas-eve-content">
+            <span className="event-tag-gold event-tag-desktop">✨ Christmas Eve</span>
+            <h2 className="event-title-desktop">Christmas Eve<br />Services</h2>
 
             <div className="event-meta-modern">
               <div className="meta-item">
@@ -425,15 +458,6 @@ export default function ChristmasLanding() {
               Get Directions
               <span className="btn-arrow">→</span>
             </a>
-          </div>
-
-          <div className="christmas-eve-image">
-            <div className="photo-grid-4">
-              <img src="/images/raw/Grace Christmas Photos/DSC02639-Enhanced-NR.jpg" alt="Christmas Eve" className="photo-grid-main" />
-              <img src="/images/raw/Grace Christmas Photos/DSC03056-Enhanced-NR.jpg" alt="Christmas Eve" className="photo-grid-item" />
-              <img src="/images/raw/Grace Christmas Photos/DSC02693-Enhanced-NR.jpg" alt="Christmas Eve" className="photo-grid-item" />
-              <img src="/images/raw/Grace Christmas Photos/DSC02798-Enhanced-NR.jpg" alt="Christmas Eve" className="photo-grid-item" />
-            </div>
           </div>
         </div>
       </section>
