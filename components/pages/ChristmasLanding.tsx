@@ -142,7 +142,7 @@ export default function ChristmasLanding() {
             <div className="video-card">
               <video
                 className="video-card-video"
-                poster="/images/raw/Grace Christmas Photos/DSC02693-Enhanced-NR.jpg"
+                poster="/images/raw/Christmas Car Show Photos-Web/0F8A0036.jpg"
                 muted
                 loop
                 playsInline
@@ -164,7 +164,7 @@ export default function ChristmasLanding() {
             <div className="video-card">
               <video
                 className="video-card-video"
-                poster="/images/raw/Grace Christmas Photos/DSC02798-Enhanced-NR.jpg"
+                poster="/images/raw/family christmas web/0F8A4374-Enhanced-NR.jpg"
                 muted
                 loop
                 playsInline
@@ -186,7 +186,7 @@ export default function ChristmasLanding() {
             <div className="video-card">
               <video
                 className="video-card-video"
-                poster="/images/raw/Grace Christmas Photos/DSC02985-Enhanced-NR.jpg"
+                poster="/images/raw/additional-photos/0F8A0953.jpg"
                 muted
                 loop
                 playsInline
@@ -207,7 +207,7 @@ export default function ChristmasLanding() {
             {/* CHRISTMAS EVE VIDEO CARD */}
             <div className="video-card">
               <img
-                src="/images/raw/Grace Christmas Photos/DSC02639-Enhanced-NR.jpg"
+                src="/images/raw/Grace Christmas Photos/DSC03056-Enhanced-NR.jpg"
                 alt="Christmas Eve Services"
                 className="video-card-video"
               />
@@ -241,7 +241,7 @@ export default function ChristmasLanding() {
               <img src="/images/raw/Christmas Car Show Photos-Web/0F8A0036.jpg" alt="Christmas Car Show" className="photo-grid-main" />
               <img src="/images/raw/Christmas Car Show Photos-Web/0F8A0116.jpg" alt="Christmas Car Show" className="photo-grid-item" />
               <img src="/images/raw/Christmas Car Show Photos-Web/0F8A9951.jpg" alt="Christmas Car Show" className="photo-grid-item" />
-              <img src="/images/raw/Christmas Car Show Photos-Web/0F8A9975.jpg" alt="Christmas Car Show" className="photo-grid-item" />
+              <img src="/images/raw/additional-photos/DJI_0243.jpg" alt="Christmas Car Show Full Lot" className="photo-grid-item" />
             </div>
           </div>
 
@@ -353,11 +353,12 @@ export default function ChristmasLanding() {
 
           {/* Left side - Images */}
           <div className="polar-express-modern-image">
-            <div className="photo-grid-4">
-              <img src="/images/raw/LOGO - Polar Express.jpg" alt="The Polar Express Movie Experience" className="photo-grid-main" />
-              <img src="/images/raw/Grace Christmas Photos/DSC03472-Enhanced-NR.jpg" alt="Christmas at Grace" className="photo-grid-item" />
-              <img src="/images/raw/Grace Christmas Photos/DSC02985-Enhanced-NR.jpg" alt="Christmas at Grace" className="photo-grid-item" />
-              <img src="/images/raw/Grace Christmas Photos/DSC03528-Enhanced-NR.jpg" alt="Christmas at Grace" className="photo-grid-item" />
+            <div className="photo-grid-5">
+              <img src="/images/raw/additional-photos/0f8a0587.jpg" alt="Polar Express Experience" className="photo-grid-main" />
+              <img src="/images/raw/additional-photos/0f8a0817.jpg" alt="Polar Express Experience" className="photo-grid-item" />
+              <img src="/images/raw/additional-photos/0F8A0953.jpg" alt="Polar Express Experience" className="photo-grid-item" />
+              <img src="/images/raw/additional-photos/0f8a1028.jpg" alt="Polar Express Experience" className="photo-grid-item" />
+              <img src="/images/raw/additional-photos/0f8a0597.jpg" alt="Polar Express Experience" className="photo-grid-item" />
             </div>
           </div>
 

@@ -6628,12 +6628,121 @@ section.contact-section, .contact-section {
   background: radial-gradient(ellipse, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
 }
 
-/* Polar Express main image - maintain 16:9 aspect ratio for logo */
-.polar-express-modern .photo-grid-4 .photo-grid-main {
-  aspect-ratio: 16 / 9;
-  height: auto;
-  width: 70%;
+/* Photo Grid - 5 images layout for Polar Express */
+.photo-grid-5 {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  padding: 30px;
+}
+
+.photo-grid-5::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(ellipse, rgba(22, 91, 51, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Main large image - base of the stack */
+.photo-grid-5 .photo-grid-main {
+  position: absolute;
+  width: 65%;
+  height: 75%;
+  top: 10%;
+  left: 5%;
   object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.photo-grid-5 .photo-grid-main:hover {
+  transform: rotate(-2deg) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Stacked smaller images with rotation */
+.photo-grid-5 .photo-grid-item {
+  position: absolute;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, z-index 0s;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Second image - top right */
+.photo-grid-5 .photo-grid-item:nth-child(2) {
+  width: 40%;
+  height: 38%;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transform: rotate(4deg);
+}
+
+.photo-grid-5 .photo-grid-item:nth-child(2):hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  z-index: 10;
+}
+
+/* Third image - middle right */
+.photo-grid-5 .photo-grid-item:nth-child(3) {
+  width: 35%;
+  height: 32%;
+  top: 42%;
+  right: 2%;
+  z-index: 3;
+  transform: rotate(-3deg);
+}
+
+.photo-grid-5 .photo-grid-item:nth-child(3):hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  z-index: 10;
+}
+
+/* Fourth image - bottom center */
+.photo-grid-5 .photo-grid-item:nth-child(4) {
+  width: 32%;
+  height: 30%;
+  bottom: 0;
+  left: 30%;
+  z-index: 4;
+  transform: rotate(2deg);
+}
+
+.photo-grid-5 .photo-grid-item:nth-child(4):hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  z-index: 10;
+}
+
+/* Fifth image - bottom right */
+.photo-grid-5 .photo-grid-item:nth-child(5) {
+  width: 30%;
+  height: 28%;
+  bottom: 5%;
+  right: 8%;
+  z-index: 5;
+  transform: rotate(-2deg);
+}
+
+.photo-grid-5 .photo-grid-item:nth-child(5):hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  z-index: 10;
 }
 
 .event-note-modern {
@@ -8105,33 +8214,58 @@ section.contact-section, .contact-section {
     grid-row: 2 !important;
   }
 
-  /* Polar Express mobile - 16:9 main image spans full width */
-  .polar-express-modern .photo-grid-4 {
-    grid-template-columns: 1fr 1fr 1fr !important;
-    grid-template-rows: auto auto !important;
-  }
-
-  .polar-express-modern .photo-grid-4 .photo-grid-main {
-    grid-column: 1 / -1 !important;
-    grid-row: 1 !important;
-    aspect-ratio: 16 / 9 !important;
-    width: 100% !important;
+  /* Photo Grid 5 Mobile - 2x3 layout with main spanning top */
+  .photo-grid-5 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-rows: 1fr 1fr 1fr !important;
+    gap: 10px !important;
+    height: auto !important;
+    padding: 15px !important;
     min-height: auto !important;
   }
 
-  .polar-express-modern .photo-grid-4 .photo-grid-item:nth-child(2) {
+  .photo-grid-5 .photo-grid-main,
+  .photo-grid-5 .photo-grid-item {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 120px !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .photo-grid-5 .photo-grid-main {
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  .photo-grid-5 .photo-grid-item:nth-child(2) {
     grid-column: 1 !important;
     grid-row: 2 !important;
   }
 
-  .polar-express-modern .photo-grid-4 .photo-grid-item:nth-child(3) {
+  .photo-grid-5 .photo-grid-item:nth-child(3) {
     grid-column: 2 !important;
     grid-row: 2 !important;
   }
 
-  .polar-express-modern .photo-grid-4 .photo-grid-item:nth-child(4) {
-    grid-column: 3 !important;
-    grid-row: 2 !important;
+  .photo-grid-5 .photo-grid-item:nth-child(4) {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+  }
+
+  .photo-grid-5 .photo-grid-item:nth-child(5) {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
   }
 
   /* Center Family Christmas heading on mobile */
