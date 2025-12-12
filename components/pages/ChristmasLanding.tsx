@@ -431,7 +431,7 @@ export default function ChristmasLanding() {
             <div className="event-meta-modern">
               <div className="meta-item">
                 <span className="meta-icon">📅</span>
-                <span className="meta-text">December 24, 2024</span>
+                <span className="meta-text">December 24, 2025</span>
               </div>
               <div className="meta-item">
                 <span className="meta-icon">⏰</span>
