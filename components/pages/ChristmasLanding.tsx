@@ -14,6 +14,44 @@ export default function ChristmasLanding() {
   const [timedSignupMessage, setTimedSignupMessage] = useState('')
   const [timedSignupMessageType, setTimedSignupMessageType] = useState<'success' | 'error' | ''>('')
 
+  // Newsletter form state
+  const [newsletterData, setNewsletterData] = useState({ name: '', email: '' })
+  const [newsletterSubmitting, setNewsletterSubmitting] = useState(false)
+  const [newsletterMessage, setNewsletterMessage] = useState('')
+  const [newsletterMessageType, setNewsletterMessageType] = useState<'success' | 'error' | ''>('')
+
+  // Newsletter form handler
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setNewsletterSubmitting(true)
+    setNewsletterMessage('')
+    setNewsletterMessageType('')
+
+    try {
+      const response = await fetch('/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newsletterData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setNewsletterMessage(data.message || 'Thanks for signing up!')
+        setNewsletterMessageType('success')
+        setNewsletterData({ name: '', email: '' })
+      } else {
+        setNewsletterMessage(data.error || 'Something went wrong. Please try again.')
+        setNewsletterMessageType('error')
+      }
+    } catch (error) {
+      setNewsletterMessage('Failed to sign up. Please try again.')
+      setNewsletterMessageType('error')
+    } finally {
+      setNewsletterSubmitting(false)
+    }
+  }
+
   // Timed signup modal handler
   const handleTimedSignupSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -470,26 +508,34 @@ export default function ChristmasLanding() {
           <div className="newsletter-card-modern">
             <h2>GET REGULAR UPDATES</h2>
             <p>Receive the latest church news & updates via email</p>
-            <form className="newsletter-form-modern" onSubmit={(e) => {
-              e.preventDefault()
-              alert('Thank you for subscribing! You will receive updates about Christmas events and church news.')
-            }}>
+            <form className="newsletter-form-modern" onSubmit={handleNewsletterSubmit}>
               <input
                 type="text"
                 placeholder="Name"
                 required
                 className="newsletter-input"
+                value={newsletterData.name}
+                onChange={(e) => setNewsletterData(prev => ({ ...prev, name: e.target.value }))}
+                disabled={newsletterSubmitting}
               />
               <input
                 type="email"
                 placeholder="Email"
                 required
                 className="newsletter-input"
+                value={newsletterData.email}
+                onChange={(e) => setNewsletterData(prev => ({ ...prev, email: e.target.value }))}
+                disabled={newsletterSubmitting}
               />
-              <button type="submit" className="newsletter-submit-btn">
-                Subscribe!
+              <button type="submit" className="newsletter-submit-btn" disabled={newsletterSubmitting}>
+                {newsletterSubmitting ? 'Subscribing...' : 'Subscribe!'}
               </button>
             </form>
+            {newsletterMessage && (
+              <p className={`newsletter-message ${newsletterMessageType}`} style={{ marginTop: '12px', textAlign: 'center', color: newsletterMessageType === 'success' ? '#4CAF50' : '#ff4444' }}>
+                {newsletterMessage}
+              </p>
+            )}
           </div>
 
           {/* Right - Google Map */}
