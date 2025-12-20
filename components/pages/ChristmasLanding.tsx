@@ -149,6 +149,7 @@ export default function ChristmasLanding() {
       {/* QUICK LINKS */}
       <nav className="christmas-quick-links">
         <div className="quick-links-container">
+          {/* Past events - hidden
           <a href="#car-show" className="quick-link-btn">
             <span className="quick-link-date">DEC 13</span>
             <span className="quick-link-text">CAR SHOW</span>
@@ -161,6 +162,7 @@ export default function ChristmasLanding() {
             <span className="quick-link-date">DEC 19</span>
             <span className="quick-link-text">POLAR EXPRESS</span>
           </a>
+          */}
           <a href="#christmas-eve" className="quick-link-btn">
             <span className="quick-link-date">DEC 24</span>
             <span className="quick-link-text">CHRISTMAS EVE</span>
@@ -173,10 +175,12 @@ export default function ChristmasLanding() {
         <div className="christmas-video-cards-container">
           <h2 className="christmas-section-title">Upcoming Events</h2>
 
-          {/* VIDEO CARDS GRID - 4 cards with videos and CTAs */}
+          {/* VIDEO CARDS GRID - Only showing upcoming events */}
           <div className="video-cards-grid">
 
+            {/* Past events - hidden
             {/* CAR SHOW VIDEO CARD */}
+            {/*
             <div className="video-card">
               <video
                 className="video-card-video"
@@ -197,8 +201,10 @@ export default function ChristmasLanding() {
                 <a href="#car-show" className="video-card-btn">Learn More</a>
               </div>
             </div>
+            */}
 
             {/* FAMILY CHRISTMAS VIDEO CARD */}
+            {/*
             <div className="video-card">
               <video
                 className="video-card-video"
@@ -219,8 +225,10 @@ export default function ChristmasLanding() {
                 <a href="#family-christmas" className="video-card-btn">Learn More</a>
               </div>
             </div>
+            */}
 
             {/* POLAR EXPRESS VIDEO CARD */}
+            {/*
             <div className="video-card">
               <video
                 className="video-card-video"
@@ -241,6 +249,7 @@ export default function ChristmasLanding() {
                 <a href="#polar-express" className="video-card-btn">Learn More</a>
               </div>
             </div>
+            */}
 
             {/* CHRISTMAS EVE VIDEO CARD */}
             <div className="video-card">
@@ -260,20 +269,32 @@ export default function ChristmasLanding() {
               </div>
             </div>
 
+            {/* JOIN US EVERY SUNDAY CARD */}
+            <a href="https://gracewoodlands.com/" target="_blank" rel="noopener noreferrer" className="video-card video-card-link">
+              <img
+                src="https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg"
+                alt="Grace Church Building"
+                className="video-card-video"
+              />
+              <div className="video-card-overlay">
+                <h3>Join Us Every Sunday</h3>
+                <p>9am & 11am</p>
+                <span className="video-card-btn">Visit gracewoodlands.com</span>
+              </div>
+            </a>
+
           </div>
         </div>
       </section>
 
-      {/* CAR SHOW SECTION */}
+      {/* CAR SHOW SECTION - Past event, hidden */}
+      {/*
       <section className="car-show-modern" id="car-show">
         <div className="car-show-container">
-          {/* Event Header - Tag & Name (appears first on mobile) */}
           <div className="event-header-mobile">
             <span className="event-tag-teal">🚗 Community Event</span>
             <h2>Christmas Family<br />Car Show At Grace</h2>
           </div>
-
-          {/* Left side - Images */}
           <div className="car-show-image">
             <div className="photo-grid-4">
               <img src="/images/raw/Christmas Car Show Photos-Web/0F8A0036.jpg" alt="Christmas Car Show" className="photo-grid-main" />
@@ -282,12 +303,9 @@ export default function ChristmasLanding() {
               <img src="/images/raw/additional-photos/DJI_0243.jpg" alt="Christmas Car Show Full Lot" className="photo-grid-item" />
             </div>
           </div>
-
-          {/* Right side - Content */}
           <div className="car-show-content">
             <span className="event-tag-teal event-tag-desktop">🚗 Community Event</span>
             <h2 className="event-title-desktop">Christmas Family<br />Car Show At Grace</h2>
-
             <div className="event-meta-modern">
               <div className="meta-item">
                 <span className="meta-icon">📅</span>
@@ -302,11 +320,9 @@ export default function ChristmasLanding() {
                 <span className="meta-text">Grace Church</span>
               </div>
             </div>
-
             <p className="event-description-modern">
               Our Family Christmas Car Show at Grace is a fun, free, and family-friendly event where everyone is welcome—whether you love cars or have one to show!
             </p>
-
             <div className="features-grid">
               <div className="feature-item">🎄 Playscape, Carousel & Train</div>
               <div className="feature-item">🎅 Photos with Santa</div>
@@ -315,7 +331,6 @@ export default function ChristmasLanding() {
               <div className="feature-item">🍔 Food vendors on site</div>
               <div className="feature-item">🎁 Cash prize drawings</div>
             </div>
-
             <div className="cta-area">
               <p className="free-admission">✨ Free Admission · All Welcome</p>
               <a href="https://gracewoodlands.com" target="_blank" rel="noopener noreferrer" className="modern-cta-btn">
@@ -326,27 +341,25 @@ export default function ChristmasLanding() {
           </div>
         </div>
       </section>
+      */}
 
-      {/* FAMILY CHRISTMAS SECTION */}
+      {/* FAMILY CHRISTMAS SECTION - Past event, hidden */}
+      {/*
       <section className="modern-event-section modern-event-dark" id="family-christmas">
         <div className="modern-event-container modern-event-reverse">
-          {/* Event Header - Tag & Name (appears first on mobile) */}
           <div className="event-header-mobile">
             <span className="event-tag">🎄 Family Service</span>
             <h2>Family Christmas<br />at Grace</h2>
           </div>
-
           <div className="photo-grid-4">
             <img src="/images/raw/family christmas web/0F8A4374-Enhanced-NR.jpg" alt="Family Christmas" className="photo-grid-main" />
             <img src="/images/raw/family christmas web/0F8A4428-Enhanced-NR.jpg" alt="Family Christmas" className="photo-grid-item" />
             <img src="/images/raw/family christmas web/0F8A4887-Enhanced-NR.jpg" alt="Family Christmas" className="photo-grid-item" />
             <img src="/images/raw/family christmas web/0F8A5025-Enhanced-NR.jpg" alt="Family Christmas" className="photo-grid-item" />
           </div>
-
           <div className="modern-event-content">
             <span className="event-tag event-tag-desktop">🎄 Family Service</span>
             <h2 className="event-title-desktop">Family Christmas<br />at Grace</h2>
-
             <div className="event-meta-modern">
               <div className="meta-item">
                 <span className="meta-icon">📅</span>
@@ -361,35 +374,31 @@ export default function ChristmasLanding() {
                 <span className="meta-text">Grace Church</span>
               </div>
             </div>
-
             <p className="event-description-modern">
               Experience a Christmas like no other! Plus, after service, we'll have delicious cookies and hot cocoa waiting for you.
             </p>
-
             <div className="features-grid">
               <div className="feature-item">🎵 Christmas Carol sing-along</div>
               <div className="feature-item">📖 Memorable stories</div>
               <div className="feature-item">⛄ Texas-sized snowball fight</div>
               <div className="feature-item">🎁 Christmas surprises</div>
             </div>
-
             <p className="event-note-modern">
               This is a family service—kids will be in the service and love every minute! Childcare available for birth-K.
             </p>
           </div>
         </div>
       </section>
+      */}
 
-      {/* POLAR EXPRESS SECTION */}
+      {/* POLAR EXPRESS SECTION - Past event, hidden */}
+      {/*
       <section className="polar-express-modern" id="polar-express">
         <div className="polar-express-modern-container">
-          {/* Event Header - Tag & Name (appears first on mobile) */}
           <div className="event-header-mobile">
             <span className="event-tag">🎄 Special Event</span>
             <h2>The Polar Express<br />Movie Experience</h2>
           </div>
-
-          {/* Left side - Images */}
           <div className="polar-express-modern-image">
             <div className="photo-grid-5">
               <img src="/images/raw/additional-photos/0f8a0587.jpg" alt="Polar Express Experience" className="photo-grid-main" />
@@ -399,12 +408,9 @@ export default function ChristmasLanding() {
               <img src="/images/raw/additional-photos/0f8a0597.jpg" alt="Polar Express Experience" className="photo-grid-item" />
             </div>
           </div>
-
-          {/* Right side - Content */}
           <div className="polar-express-modern-content">
             <span className="event-tag event-tag-desktop">🎄 Special Event</span>
             <h2 className="event-title-desktop">The Polar Express<br />Movie Experience</h2>
-
             <div className="event-meta-modern">
               <div className="meta-item">
                 <span className="meta-icon">📅</span>
@@ -419,11 +425,9 @@ export default function ChristmasLanding() {
                 <span className="meta-text">Grace Church</span>
               </div>
             </div>
-
             <p className="event-description-modern">
               Come watch & experience The Polar Express! Attractions open at 6:30pm, the movie begins at 7:30pm, and attractions continue after the movie until 10pm.
             </p>
-
             <div className="features-grid">
               <div className="feature-item">🎬 Indoor & outdoor viewing</div>
               <div className="feature-item">☕ Hot cocoa & cookies</div>
@@ -432,7 +436,6 @@ export default function ChristmasLanding() {
               <div className="feature-item">🚂 Train & carousel rides</div>
               <div className="feature-item">🎨 Elf workshop crafts</div>
             </div>
-
             <div className="cta-area">
               <p className="free-admission">✨ Free Admission · Limited Seating</p>
               <a href="https://gracewoodlands.churchcenter.com/registrations/events/2675029" target="_blank" rel="noopener noreferrer" className="modern-cta-btn">
@@ -443,6 +446,7 @@ export default function ChristmasLanding() {
           </div>
         </div>
       </section>
+      */}
 
       {/* CHRISTMAS EVE SECTION */}
       <section className="christmas-eve-modern" id="christmas-eve">
@@ -571,9 +575,11 @@ export default function ChristmasLanding() {
               <h4>Christmas Events</h4>
               <ul>
                 <li><a href="#christmas-eve">Christmas Eve Services</a></li>
+                {/* Past events - hidden
                 <li><a href="#car-show">Christmas Car Show</a></li>
                 <li><a href="#family-christmas">Family Christmas</a></li>
                 <li><a href="#polar-express">Polar Express</a></li>
+                */}
               </ul>
             </div>
 

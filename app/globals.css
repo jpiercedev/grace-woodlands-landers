@@ -7049,10 +7049,27 @@ section.contact-section, .contact-section {
 }
 
 .video-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 30px;
   margin-top: 40px;
+}
+
+.video-cards-grid .video-card {
+  flex: 0 1 280px;
+  max-width: 320px;
+}
+
+/* Link card styling */
+.video-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.video-card-link:hover {
+  transform: translateY(-5px);
 }
 
 .video-card {
@@ -7152,15 +7169,16 @@ section.contact-section, .contact-section {
   background: #0f4525;
 }
 
-@media (max-width: 1200px) {
-  .video-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
   .video-cards-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-cards-grid .video-card {
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 400px;
   }
 
   .video-card-video {
