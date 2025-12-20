@@ -269,16 +269,16 @@ export default function ChristmasLanding() {
               </div>
             </div>
 
-            {/* JOIN US EVERY SUNDAY CARD */}
+            {/* GRACE WOODLANDS CARD */}
             <a href="https://gracewoodlands.com/" target="_blank" rel="noopener noreferrer" className="video-card video-card-link">
               <img
                 src="https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg"
-                alt="Grace Church Building"
+                alt="Grace Woodlands Building"
                 className="video-card-video"
               />
               <div className="video-card-overlay">
-                <h3>Join Us Every Sunday</h3>
-                <p>9am & 11am</p>
+                <h3>Grace Woodlands</h3>
+                <p>Sundays at 9am & 11am</p>
                 <span className="video-card-btn">Visit gracewoodlands.com</span>
               </div>
             </a>
