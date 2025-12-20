@@ -269,16 +269,16 @@ export default function ChristmasLanding() {
               </div>
             </div>
 
-            {/* GRACE WOODLANDS CARD */}
+            {/* JOIN US EVERY SUNDAY CARD */}
             <a href="https://gracewoodlands.com/" target="_blank" rel="noopener noreferrer" className="video-card video-card-link">
               <img
                 src="https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg"
-                alt="Grace Woodlands Building"
+                alt="Grace Church Building"
                 className="video-card-video"
               />
               <div className="video-card-overlay">
-                <h3>Grace Woodlands</h3>
-                <p>Sundays at 9am & 11am</p>
+                <h3>Join Us Every Sunday</h3>
+                <p>9am & 11am</p>
                 <span className="video-card-btn">Visit gracewoodlands.com</span>
               </div>
             </a>
@@ -545,14 +545,14 @@ export default function ChristmasLanding() {
           {/* Right - Google Map */}
           <div className="map-card-modern">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.3876901850347!2d-95.43876892354867!3d30.19024501190918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8647355d0a9b0e6b%3A0x9d5e7a0e5b8b5b0f!2s24400%20I-45%2C%20Spring%2C%20TX%2077386!5e0!3m2!1sen!2sus!4v1702300000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.1234567890123!2d-95.4401582!3d30.1173913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86473693bab7ce87%3A0xe41d74c9ac91fe49!2sGrace%20Woodlands!5e0!3m2!1sen!2sus!4v1702300000000!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: '12px' }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Grace Church Location"
+              title="Grace Woodlands Location"
             ></iframe>
           </div>
         </div>
