@@ -9253,6 +9253,33 @@ section.contact-section, .contact-section {
     padding: 64px 0;
   }
 
+  /* Force single column layout on mobile for hero */
+  .easter-hero-container {
+    grid-template-columns: 1fr !important;
+    gap: clamp(32px, 6vw, 48px);
+  }
+
+  /* Center the logo on mobile */
+  .easter-hero-logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Center hero text on mobile */
+  .easter-hero-copy {
+    text-align: center;
+  }
+
+  .easter-hero-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Center buttons on mobile */
+  .easter-hero-actions {
+    justify-content: center;
+  }
+
   .easter-hero-card,
   .easter-overview-card,
   .easter-feature-card,
