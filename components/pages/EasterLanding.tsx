@@ -161,7 +161,7 @@ export default function EasterLanding() {
               className="easter-hero-logo"
             />
             <p>
-              Join us on Sunday, April 5th at 9am or 11am for a powerful worship experience with the Grace Choir and an encouraging message from Pastor Steve Riggle. We have something for the whole family as we worship and celebrate our Risen Savior!
+              <strong>Join us on Sunday, April 5th at 9am or 11am</strong> for a powerful worship experience with the Grace Choir and an encouraging message from Pastor Steve Riggle. We have something for the whole family as we worship and celebrate our Risen Savior!
             </p>
             <div className="easter-hero-actions">
               <a href="#service-times" className="easter-primary-btn">See Service Times</a>

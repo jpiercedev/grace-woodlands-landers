@@ -8726,6 +8726,13 @@ section.contact-section, .contact-section {
   max-width: 58ch;
 }
 
+.easter-hero-copy p strong {
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(20px, 2.6vw, 24px);
+  letter-spacing: 0.01em;
+}
+
 .easter-hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -9238,8 +9245,38 @@ section.contact-section, .contact-section {
     font-size: 20px;
   }
 
-  .easter-header-cta {
+  /* Mobile header improvements */
+  .easter-header {
+    padding: 0;
+  }
+
+  .easter-header-inner {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px 0;
+  }
+
+  .easter-logo {
+    max-width: 180px;
+  }
+
+  .easter-header-links {
+    order: 2;
     width: 100%;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .easter-header-links a {
+    font-size: 13px;
+  }
+
+  .easter-header-cta {
+    order: 3;
+    width: calc(100% - 40px);
+    max-width: 280px;
+    text-align: center;
+    padding: 12px 24px;
   }
 
   .easter-section,
