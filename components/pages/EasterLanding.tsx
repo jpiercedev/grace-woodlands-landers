@@ -44,10 +44,34 @@ const galleryImages = [
   },
 ]
 
-const footerLinks = [
-  { label: 'Service Times', href: '#service-times' },
-  { label: 'Map & Directions', href: '#map' },
-  { label: 'Contact Us', href: '#contact' },
+const aboutLinks = [
+  { label: 'Who We Are', href: 'https://gracewoodlands.com/about/' },
+  { label: 'Values', href: 'https://gracewoodlands.com/values/' },
+  { label: 'Leadership Team', href: 'https://gracewoodlands.com/leadership/' },
+  { label: 'Grace International', href: 'https://gracewoodlands.com/grace-international/' },
+  { label: 'Grace Latino', href: 'https://gracewoodlands.com/grace-latino/' },
+  { label: 'Business Directory', href: 'https://gracewoodlands.com/business-directory/' },
+]
+
+const ministriesLinks = [
+  { label: 'Grace Kids', href: 'https://gracewoodlands.com/grace-kids/' },
+  { label: 'Anthem Youth', href: 'https://gracewoodlands.com/anthem/' },
+  { label: 'Faith Votes', href: 'https://gracewoodlands.com/faith-votes/' },
+  { label: 'PrimeTime Seniors', href: 'https://gracewoodlands.com/primetime/' },
+  { label: 'Pastoral Care', href: 'https://gracewoodlands.com/pastoral-care/' },
+  { label: 'More Ministries', href: 'https://gracewoodlands.com/ministries/' },
+]
+
+const joinUsLinks = [
+  { label: 'Events', href: 'https://gracewoodlands.com/events/' },
+  { label: 'Groups & Classes', href: 'https://gracewoodlands.com/groups/' },
+  { label: 'Volunteer', href: 'https://gracewoodlands.com/volunteer/' },
+  { label: 'Give', href: 'https://gracewoodlands.com/give/' },
+]
+
+const mediaLinks = [
+  { label: 'Sermons', href: 'https://gracewoodlands.com/sermons/' },
+  { label: 'Watch Live', href: 'https://gracewoodlands.com/live/' },
 ]
 
 export default function EasterLanding() {
@@ -488,17 +512,47 @@ export default function EasterLanding() {
               alt="Grace Church"
               className="easter-footer-logo"
             />
-            <p>
-              Celebrate Easter at Grace Woodlands with a community that loves Jesus, welcomes people well, and makes room for the whole family.
-            </p>
           </div>
 
           <div>
-            <h4>Easter Links</h4>
+            <h4>About</h4>
             <ul className="easter-footer-list">
-              {footerLinks.map((link) => (
+              {aboutLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4>Ministries</h4>
+            <ul className="easter-footer-list">
+              {ministriesLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4>Join Us</h4>
+            <ul className="easter-footer-list">
+              {joinUsLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4>Media</h4>
+            <ul className="easter-footer-list">
+              {mediaLinks.map((link) => (
+                <li key={link.label}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer">{link.label}</a>
                 </li>
               ))}
             </ul>

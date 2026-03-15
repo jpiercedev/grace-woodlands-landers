@@ -8655,10 +8655,15 @@ section.contact-section, .contact-section {
 
 .easter-hero-container,
 .easter-gallery-grid,
-.easter-contact-section .contact-content,
-.easter-footer-grid {
+.easter-contact-section .contact-content {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 4vw, 56px);
+}
+
+.easter-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(28px, 4vw, 56px);
 }
 
@@ -8822,11 +8827,15 @@ section.contact-section, .contact-section {
 .easter-feature-card p,
 .easter-newsletter-card p,
 .easter-map-copy p,
-.easter-contact-intro p,
+.easter-contact-intro p {
+  color: rgba(36, 48, 34, 0.82);
+  line-height: 1.7;
+}
+
 .easter-footer-grid p,
 .easter-footer-list,
 .easter-footer-bottom {
-  color: rgba(36, 48, 34, 0.82);
+  color: rgba(255, 255, 255, 0.82);
   line-height: 1.7;
 }
 
@@ -8920,10 +8929,15 @@ section.contact-section, .contact-section {
 .easter-overview-card h3,
 .easter-feature-card h3,
 .easter-contact-section .contact-info h3,
-.easter-contact-section .contact-form-container h3,
-.easter-footer-grid h4 {
+.easter-contact-section .contact-form-container h3 {
   margin: 0 0 14px;
   color: var(--easter-forest);
+}
+
+.easter-footer-grid h4 {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
 }
 
 .easter-overview-card h3,
