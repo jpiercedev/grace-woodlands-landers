@@ -5,19 +5,19 @@ import { useState } from 'react'
 
 const overviewCards = [
   {
-    title: 'Meaningful Easter worship',
+    title: 'The Presence of God',
     description:
-      'Come for a hope-filled gathering centered on Jesus, with worship, teaching, and a warm welcome from the moment you arrive.',
+      'We are a church that prioritizes the presence of God and believes in the power of prayer.',
   },
   {
-    title: 'Easy for the whole family',
+    title: "The Truth of God's Word",
     description:
-      'Whether you are coming on your own, with friends, or bringing the whole family, Grace is designed to help you feel at home.',
+      "We unashamedly preach God's Word and stand firmly on its truth.",
   },
   {
-    title: 'A place to belong beyond Easter',
+    title: 'A Church for You',
     description:
-      'If this is your first visit, we would love to help you get connected and make Grace a place you can return to every week.',
+      "If you're looking for a place grounded in God's presence and truth… GRACE IS FOR YOU!",
   },
 ]
 
@@ -161,8 +161,7 @@ export default function EasterLanding() {
               className="easter-hero-logo"
             />
             <p>
-              Join Grace Woodlands for an Easter experience that feels warm, meaningful, and easy to step into—
-              whether this is your first Sunday in a long time or you are already part of the Grace family.
+              Join us on Sunday, April 5th at 9am or 11am for a powerful worship experience with the Grace Choir and an encouraging message from Pastor Steve Riggle. We have something for the whole family as we worship and celebrate our Risen Savior!
             </p>
             <div className="easter-hero-actions">
               <a href="#service-times" className="easter-primary-btn">See Service Times</a>
@@ -171,13 +170,12 @@ export default function EasterLanding() {
             <div className="easter-service-chips" aria-label="Key Easter details">
               <span>Good Friday • 7:00 PM</span>
               <span>Sunday Worship • 9:00 AM &amp; 11:00 AM</span>
-              <span>Grace Kids &amp; Friendly Hospitality</span>
             </div>
           </div>
 
           <div className="easter-hero-card">
             <span className="easter-hero-card-label">Easter weekend at a glance</span>
-            <h2>Come expecting peace, joy, and a place to belong.</h2>
+            <h2>If you are looking for a church to celebrate the hope and victory of Easter—where the presence of God is welcomed, the power of prayer is believed in, friendships are built, and God's Word is boldly preached… GRACE IS FOR YOU!</h2>
             <ul className="easter-hero-list">
               <li>
                 <strong>Good Friday Gathering</strong>
@@ -209,11 +207,7 @@ export default function EasterLanding() {
         <div className="container">
           <div className="easter-section-heading centered">
             <span className="easter-section-kicker">What to expect</span>
-            <h2>A fresh, welcoming Easter experience built around hope and connection.</h2>
-            <p>
-              We designed this page to make your Easter visit simple. Here is what people usually love most about
-              coming to Grace Woodlands for a special weekend.
-            </p>
+            <h2>Grace is for You</h2>
           </div>
 
           <div className="easter-overview-grid">
@@ -231,7 +225,7 @@ export default function EasterLanding() {
         <div className="container">
           <div className="easter-section-heading">
             <span className="easter-section-kicker">Weekend details</span>
-            <h2>Plan your Easter weekend with confidence.</h2>
+            <h2>Plan your Easter weekend at Grace.</h2>
             <p>
               Whether you want a reflective Good Friday gathering or a joyful Easter Sunday worship experience,
               Grace has space for you.
