@@ -263,7 +263,7 @@ export default function EasterLanding() {
 
       <section className="easter-section easter-feature-section" id="service-times">
         <div className="container">
-          <div className="easter-section-heading">
+          <div className="easter-section-heading scroll-animate">
             <span className="easter-section-kicker">Weekend details</span>
             <h2>Plan your Easter weekend at Grace.</h2>
             <p>
@@ -273,7 +273,7 @@ export default function EasterLanding() {
           </div>
 
           <div className="easter-feature-grid">
-            <article className="easter-feature-card easter-feature-card-dark" id="good-friday">
+            <article className="easter-feature-card easter-feature-card-dark scroll-animate sa-delay-1" id="good-friday">
               <span className="easter-feature-meta">Friday evening</span>
               <h3>Good Friday</h3>
               <p>
@@ -286,7 +286,7 @@ export default function EasterLanding() {
               </ul>
             </article>
 
-            <article className="easter-feature-card" id="easter-sunday">
+            <article className="easter-feature-card scroll-animate sa-delay-2" id="easter-sunday">
               <span className="easter-feature-meta">Sunday morning</span>
               <h3>Easter Sunday</h3>
               <p>
@@ -299,7 +299,7 @@ export default function EasterLanding() {
               </ul>
             </article>
 
-            <article className="easter-feature-card easter-feature-card-soft">
+            <article className="easter-feature-card easter-feature-card-soft scroll-animate sa-delay-3">
               <span className="easter-feature-meta">First-time guests</span>
               <h3>Your first visit made simple</h3>
               <p>
@@ -318,14 +318,14 @@ export default function EasterLanding() {
       <section className="easter-section easter-gallery-section" id="gallery">
         <div className="container">
           <div className="modern-event-container modern-event-reverse">
-            <div className="photo-grid-5" aria-label="Grace Woodlands photo gallery">
+            <div className="photo-grid-5 scroll-animate sa-left" aria-label="Grace Woodlands photo gallery">
               <img src="/images/promo/0F8A8176.jpg" alt="People connecting at Grace Woodlands" className="photo-grid-main" />
               <img src="/images/promo/0F8A8241.jpg" alt="Grace Woodlands Easter celebration" className="photo-grid-item" />
               <img src="/images/promo/0F8A8636.jpg" alt="Worship experience at Grace Woodlands" className="photo-grid-item" />
               <img src="/images/promo/0F8A8876.jpg" alt="Grace Woodlands church family" className="photo-grid-item" />
               <img src="/images/promo/0F8A8935-crop.jpg" alt="Easter at Grace Woodlands" className="photo-grid-item" />
             </div>
-            <div className="modern-event-content easter-gallery-copy">
+            <div className="modern-event-content easter-gallery-copy scroll-animate sa-delay-1">
               <span className="easter-section-kicker">Experience Easter at Grace</span>
               <h2>Grace Is For You</h2>
               <p>
@@ -343,7 +343,7 @@ export default function EasterLanding() {
 
       <section className="easter-newsletter-map-section" id="map">
         <div className="container newsletter-map-container">
-          <div className="easter-newsletter-card">
+          <div className="easter-newsletter-card scroll-animate sa-left">
             <span className="easter-section-kicker">Stay connected</span>
             <h2>Get Easter updates and stay in the loop with Grace.</h2>
             <p>
@@ -385,7 +385,7 @@ export default function EasterLanding() {
             )}
           </div>
 
-          <div className="easter-map-card">
+          <div className="easter-map-card scroll-animate sa-right">
             <div className="easter-map-copy">
               <span className="easter-section-kicker">Find Grace</span>
               <h2>{"You've seen us from the freeway"}</h2>
@@ -423,7 +423,7 @@ export default function EasterLanding() {
 
       <section className="contact-section easter-contact-section" id="contact">
         <div className="container">
-          <div className="easter-contact-intro">
+          <div className="easter-contact-intro scroll-animate">
             <span className="easter-section-kicker">Questions before you come?</span>
             <h2>We would love to help you plan your Easter visit.</h2>
             <p>
@@ -432,7 +432,7 @@ export default function EasterLanding() {
           </div>
 
           <div className="contact-content">
-            <div className="contact-info">
+            <div className="contact-info scroll-animate sa-left sa-delay-1">
               <h3>CONTACT US</h3>
               <div className="contact-details">
                 <div className="contact-item">
@@ -464,7 +464,7 @@ export default function EasterLanding() {
               </div>
             </div>
 
-            <div className="contact-form-container">
+            <div className="contact-form-container scroll-animate sa-right sa-delay-2">
               <h3>GET IN TOUCH</h3>
               <form className="contact-form" onSubmit={handleContactSubmit}>
                 <div className="form-row">
