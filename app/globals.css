@@ -8018,14 +8018,14 @@ section.contact-section, .contact-section {
   margin: 0 auto;
 }
 
-.footer-grid {
+.christmas-footer-container .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 45px;
   margin-bottom: 45px;
 }
 
-.footer-col h4 {
+.christmas-footer-container .footer-col h4 {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
   font-size: 16px;
@@ -8035,7 +8035,7 @@ section.contact-section, .contact-section {
   letter-spacing: 0.5px;
 }
 
-.footer-col p {
+.christmas-footer-container .footer-col p {
   font-family: 'Montserrat', sans-serif;
   color: rgba(255, 255, 255, 0.8);
   font-size: 13px;
@@ -8044,17 +8044,17 @@ section.contact-section, .contact-section {
   font-weight: 400;
 }
 
-.footer-col ul {
+.christmas-footer-container .footer-col ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-col ul li {
+.christmas-footer-container .footer-col ul li {
   margin-bottom: 12px;
 }
 
-.footer-col a {
+.christmas-footer-container .footer-col a {
   font-family: 'Montserrat', sans-serif;
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
@@ -8063,23 +8063,23 @@ section.contact-section, .contact-section {
   transition: color 0.3s ease;
 }
 
-.footer-col a:hover {
+.christmas-footer-container .footer-col a:hover {
   color: #fff;
 }
 
-.footer-logo {
+.christmas-footer-container .footer-logo {
   height: 55px;
   width: auto;
   margin-bottom: 18px;
 }
 
-.footer-social {
+.christmas-footer .footer-social {
   display: flex;
   gap: 14px;
   margin-top: 18px;
 }
 
-.footer-social a {
+.christmas-footer .footer-social a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8090,16 +8090,16 @@ section.contact-section, .contact-section {
   transition: all 0.3s ease;
 }
 
-.footer-social a:hover {
+.christmas-footer .footer-social a:hover {
   background: #165B33;
   transform: translateY(-3px);
 }
 
-.footer-social svg {
+.christmas-footer .footer-social svg {
   fill: #fff;
 }
 
-.footer-bottom {
+.christmas-footer-container .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 28px;
   display: flex;
@@ -8109,7 +8109,7 @@ section.contact-section, .contact-section {
   gap: 18px;
 }
 
-.footer-bottom p {
+.christmas-footer-container .footer-bottom p {
   font-family: 'Montserrat', sans-serif;
   color: rgba(255, 255, 255, 0.6);
   font-size: 13px;
@@ -8117,12 +8117,12 @@ section.contact-section, .contact-section {
   font-weight: 400;
 }
 
-.footer-links {
+.christmas-footer-container .footer-links {
   display: flex;
   gap: 22px;
 }
 
-.footer-links a {
+.christmas-footer-container .footer-links a {
   font-family: 'Montserrat', sans-serif;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
@@ -8131,7 +8131,7 @@ section.contact-section, .contact-section {
   transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
+.christmas-footer-container .footer-links a:hover {
   color: #fff;
 }
 
@@ -8140,12 +8140,12 @@ section.contact-section, .contact-section {
     padding: 50px 25px 30px;
   }
 
-  .footer-grid {
+  .christmas-footer-container .footer-grid {
     grid-template-columns: 1fr;
     gap: 35px;
   }
 
-  .footer-bottom {
+  .christmas-footer-container .footer-bottom {
     flex-direction: column;
     text-align: center;
   }
