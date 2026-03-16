@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const overviewCards = [
   {
@@ -79,6 +79,22 @@ export default function EasterLanding() {
   const [contactSubmitting, setContactSubmitting] = useState(false)
   const [contactMessage, setContactMessage] = useState('')
   const [contactMessageType, setContactMessageType] = useState<'success' | 'error' | ''>('')
+
+  useEffect(() => {
+    const els = document.querySelectorAll('.scroll-animate')
+    if (!els.length) return
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view')
+          observer.unobserve(entry.target)
+        }
+      }),
+      { threshold: 0.12 }
+    )
+    els.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -221,20 +237,20 @@ export default function EasterLanding() {
         <div className="container">
           <div className="modern-event-container">
             <div className="modern-event-content">
-              <div className="easter-section-heading">
+              <div className="easter-section-heading scroll-animate">
                 <span className="easter-section-kicker">What to expect</span>
                 <h2>Grace is for You</h2>
               </div>
               <div className="easter-overview-grid">
-                {overviewCards.map((card) => (
-                  <article key={card.title} className="easter-overview-card">
+                {overviewCards.map((card, i) => (
+                  <article key={card.title} className={`easter-overview-card scroll-animate sa-delay-${i + 1}`}>
                     <h3>{card.title}</h3>
                     <p>{card.description}</p>
                   </article>
                 ))}
               </div>
             </div>
-            <div className="photo-grid-5" aria-hidden="true">
+            <div className="photo-grid-5 scroll-animate sa-right" aria-hidden="true">
               <img src="/images/promo/0F8A4089-Enhanced-NR.jpg" alt="Grace Woodlands community gathering" className="photo-grid-main" />
               <img src="/images/promo/0F8A4230-Enhanced-NR.jpg" alt="Worship at Grace Woodlands" className="photo-grid-item" />
               <img src="/images/promo/0F8A4588-Enhanced-NR.jpg" alt="Grace Woodlands congregation" className="photo-grid-item" />

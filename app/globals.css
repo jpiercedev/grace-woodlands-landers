@@ -124,9 +124,34 @@ p {
 /* Minimal Animation Keyframes - Only for scroll effects */
 
 /* Scroll-triggered animations */
+@keyframes easter-hero-enter {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .scroll-animate { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+  /* Base: fade up */
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
   .scroll-animate.in-view { opacity: 1; transform: translateY(0); }
+
+  /* Directional variants */
+  .scroll-animate.sa-left  { transform: translateX(-32px); }
+  .scroll-animate.sa-right { transform: translateX(32px); }
+  .scroll-animate.sa-left.in-view,
+  .scroll-animate.sa-right.in-view { transform: translateX(0); }
+
+  /* Stagger delays */
+  .scroll-animate.sa-delay-1 { transition-delay: 0.1s; }
+  .scroll-animate.sa-delay-2 { transition-delay: 0.2s; }
+  .scroll-animate.sa-delay-3 { transition-delay: 0.32s; }
+
+  /* Hero entrance — CSS-only, runs on load */
+  .easter-hero-copy    { animation: easter-hero-enter 0.7s ease-out both; }
+  .easter-hero-card    { animation: easter-hero-enter 0.7s 0.18s ease-out both; }
 }
 
 /* Respect user's motion preferences */
@@ -8700,7 +8725,7 @@ section.contact-section, .contact-section {
     url('/images/raw/BG.jpg');
   background-size: cover;
   background-position: center;
-  padding: clamp(72px, 12vw, 132px) 0;
+  padding: clamp(16px, 2.5vw, 32px) 0;
 }
 
 .easter-hero-section::after {
@@ -9410,7 +9435,7 @@ section.contact-section, .contact-section {
   }
 
   .easter-hero-section {
-    padding: 64px 0;
+    padding: 16px 0;
   }
 
   /* Force single column layout on mobile for hero */
