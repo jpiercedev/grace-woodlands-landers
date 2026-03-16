@@ -852,6 +852,51 @@ body.sticky-header {
 }
 
 /************************
+ PHOTO GALLERY
+*************************/
+.photo-gallery {
+  background: #f7f7f5;
+  padding: clamp(30px, 5vw, 60px) 0;
+}
+
+.photo-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(8px, 1.5vw, 14px);
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 3 / 2;
+  background: #eee;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.04);
+}
+
+@media (max-width: 900px) {
+  .photo-gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .photo-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/************************
  OUR FOUNDATION
 *************************/
 .foundation {
@@ -6745,6 +6790,20 @@ section.contact-section, .contact-section {
   z-index: 10;
 }
 
+/* Easter section-specific glow tints for photo-grid-5 */
+.easter-overview-section .photo-grid-5::before {
+  background: radial-gradient(ellipse, rgba(24, 72, 40, 0.18) 0%, transparent 70%);
+}
+
+.easter-gallery-section .photo-grid-5::before {
+  background: radial-gradient(ellipse, rgba(200, 164, 107, 0.18) 0%, transparent 70%);
+}
+
+/* Easter overview grid: single column when inside 2-col modern-event-container */
+.modern-event-content .easter-overview-grid {
+  grid-template-columns: 1fr;
+}
+
 .event-note-modern {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
@@ -6893,7 +6952,8 @@ section.contact-section, .contact-section {
   }
 
   .modern-event-reverse .modern-image-stack,
-  .modern-event-reverse .photo-grid-4 {
+  .modern-event-reverse .photo-grid-4,
+  .modern-event-reverse .photo-grid-5 {
     order: 1;
   }
 
@@ -8995,8 +9055,10 @@ section.contact-section, .contact-section {
   background: linear-gradient(180deg, rgba(239, 229, 216, 0.45) 0%, rgba(255, 255, 255, 0.9) 100%);
 }
 
-.easter-gallery-grid {
-  align-items: center;
+.easter-gallery-copy-centered {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
 }
 
 .easter-check-list {
@@ -9006,13 +9068,32 @@ section.contact-section, .contact-section {
   margin-top: 24px;
 }
 
-.easter-photo-grid .photo-grid-main,
-.easter-photo-grid .photo-grid-item {
-  border-color: rgba(247, 241, 230, 0.75);
+.easter-check-list-centered {
+  align-items: center;
 }
 
-.easter-photo-grid::before {
-  background: radial-gradient(ellipse, rgba(200, 164, 107, 0.2) 0%, transparent 70%);
+/* 10-photo promo grid */
+.easter-promo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 220px);
+  gap: 12px;
+}
+
+.easter-promo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.easter-promo-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 28px rgba(24, 72, 40, 0.25);
+  z-index: 1;
+  position: relative;
 }
 
 .easter-newsletter-map-section {
@@ -9225,11 +9306,16 @@ section.contact-section, .contact-section {
   .easter-overview-grid,
   .easter-feature-grid,
   .easter-hero-container,
-  .easter-gallery-grid,
   .easter-contact-section .contact-content,
   .easter-footer-grid,
   .easter-newsletter-map-section .newsletter-map-container {
     grid-template-columns: 1fr;
+  }
+
+  /* Promo grid: 3 columns on tablet */
+  .easter-promo-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 180px);
   }
 
   .easter-hero-copy h1,
@@ -9258,6 +9344,21 @@ section.contact-section, .contact-section {
 }
 
 @media (max-width: 768px) {
+  /* Promo grid: 2 columns on mobile */
+  .easter-promo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 150px);
+    gap: 8px;
+  }
+
+  .easter-gallery-copy-centered {
+    text-align: left;
+  }
+
+  .easter-check-list-centered {
+    align-items: flex-start;
+  }
+
   .easter-announcement-bar {
     font-size: 11px;
     padding: 12px 16px;

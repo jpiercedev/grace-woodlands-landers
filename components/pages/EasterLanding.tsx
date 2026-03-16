@@ -22,26 +22,16 @@ const overviewCards = [
 ]
 
 const galleryImages = [
-  {
-    src: '/images/raw/additional-photos/DSC02116-Enhanced-NR.jpg',
-    alt: 'People gathering together at Grace Woodlands',
-    className: 'photo-grid-main',
-  },
-  {
-    src: '/images/raw/additional-photos/0F8A0444.jpg',
-    alt: 'Congregation worshipping at Grace Woodlands',
-    className: 'photo-grid-item',
-  },
-  {
-    src: '/images/raw/additional-photos/DJI_0243.jpg',
-    alt: 'Aerial view of the Grace Woodlands campus',
-    className: 'photo-grid-item',
-  },
-  {
-    src: '/images/raw/additional-photos/0f8a0817.jpg',
-    alt: 'Church community smiling together at Grace Woodlands',
-    className: 'photo-grid-item',
-  },
+  { src: '/images/promo/0F8A4089-Enhanced-NR.jpg', alt: 'Grace Woodlands community gathering' },
+  { src: '/images/promo/0F8A4230-Enhanced-NR.jpg', alt: 'Worship at Grace Woodlands' },
+  { src: '/images/promo/0F8A4588-Enhanced-NR.jpg', alt: 'Grace Woodlands congregation' },
+  { src: '/images/promo/0F8A4662-Enhanced-NR.jpg', alt: 'Community at Grace Woodlands' },
+  { src: '/images/promo/0F8A8091-2.jpg', alt: 'Grace Woodlands service moment' },
+  { src: '/images/promo/0F8A8176.jpg', alt: 'People connecting at Grace Woodlands' },
+  { src: '/images/promo/0F8A8241.jpg', alt: 'Grace Woodlands Easter celebration' },
+  { src: '/images/promo/0F8A8636.jpg', alt: 'Worship experience at Grace Woodlands' },
+  { src: '/images/promo/0F8A8876.jpg', alt: 'Grace Woodlands church family' },
+  { src: '/images/promo/0F8A8935-crop.jpg', alt: 'Easter at Grace Woodlands' },
 ]
 
 const aboutLinks = [
@@ -229,18 +219,28 @@ export default function EasterLanding() {
 
       <section className="easter-section easter-overview-section">
         <div className="container">
-          <div className="easter-section-heading centered">
-            <span className="easter-section-kicker">What to expect</span>
-            <h2>Grace is for You</h2>
-          </div>
-
-          <div className="easter-overview-grid">
-            {overviewCards.map((card) => (
-              <article key={card.title} className="easter-overview-card">
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
-              </article>
-            ))}
+          <div className="modern-event-container">
+            <div className="modern-event-content">
+              <div className="easter-section-heading">
+                <span className="easter-section-kicker">What to expect</span>
+                <h2>Grace is for You</h2>
+              </div>
+              <div className="easter-overview-grid">
+                {overviewCards.map((card) => (
+                  <article key={card.title} className="easter-overview-card">
+                    <h3>{card.title}</h3>
+                    <p>{card.description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="photo-grid-5" aria-hidden="true">
+              <img src="/images/promo/0F8A4089-Enhanced-NR.jpg" alt="Grace Woodlands community gathering" className="photo-grid-main" />
+              <img src="/images/promo/0F8A4230-Enhanced-NR.jpg" alt="Worship at Grace Woodlands" className="photo-grid-item" />
+              <img src="/images/promo/0F8A4588-Enhanced-NR.jpg" alt="Grace Woodlands congregation" className="photo-grid-item" />
+              <img src="/images/promo/0F8A4662-Enhanced-NR.jpg" alt="Community at Grace Woodlands" className="photo-grid-item" />
+              <img src="/images/promo/0F8A8091-2.jpg" alt="Grace Woodlands service moment" className="photo-grid-item" />
+            </div>
           </div>
         </div>
       </section>
@@ -300,29 +300,27 @@ export default function EasterLanding() {
       </section>
 
       <section className="easter-section easter-gallery-section" id="gallery">
-        <div className="container easter-gallery-grid">
-          <div className="easter-gallery-copy">
-            <span className="easter-section-kicker">Experience Easter at Grace</span>
-            <h2>Grace Is For You</h2>
-            <p>
-              Grace Woodlands is a place where you can experience authentic worship, biblical teaching, and genuine community.
-            </p>
-            <ul className="easter-check-list">
-              <li>Friendly environment for guests and families</li>
-              <li>Gathering spaces built for connection before and after service</li>
-              <li>A place to grow in your faith</li>
-            </ul>
-          </div>
-
-          <div className="photo-grid-4 easter-photo-grid" aria-label="Grace Woodlands photo collage">
-            {galleryImages.map((image) => (
-              <img
-                key={image.src}
-                src={image.src}
-                alt={image.alt}
-                className={image.className}
-              />
-            ))}
+        <div className="container">
+          <div className="modern-event-container modern-event-reverse">
+            <div className="photo-grid-5" aria-label="Grace Woodlands photo gallery">
+              <img src="/images/promo/0F8A8176.jpg" alt="People connecting at Grace Woodlands" className="photo-grid-main" />
+              <img src="/images/promo/0F8A8241.jpg" alt="Grace Woodlands Easter celebration" className="photo-grid-item" />
+              <img src="/images/promo/0F8A8636.jpg" alt="Worship experience at Grace Woodlands" className="photo-grid-item" />
+              <img src="/images/promo/0F8A8876.jpg" alt="Grace Woodlands church family" className="photo-grid-item" />
+              <img src="/images/promo/0F8A8935-crop.jpg" alt="Easter at Grace Woodlands" className="photo-grid-item" />
+            </div>
+            <div className="modern-event-content easter-gallery-copy">
+              <span className="easter-section-kicker">Experience Easter at Grace</span>
+              <h2>Grace Is For You</h2>
+              <p>
+                Grace Woodlands is a place where you can experience authentic worship, biblical teaching, and genuine community.
+              </p>
+              <ul className="easter-check-list">
+                <li>Friendly environment for guests and families</li>
+                <li>Gathering spaces built for connection before and after service</li>
+                <li>A place to grow in your faith</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
