@@ -8932,6 +8932,41 @@ section.contact-section, .contact-section {
   text-decoration: none;
 }
 
+/* Anchor scroll offset — scroll-margin-top compounds with the global html scroll-padding-top.
+   Desktop: global scroll-padding-top (~100-120px) already exceeds the Easter header (~76px), so no extra needed.
+   Tablet:  header stacks to ~120px; global is ~100px → add 20px.
+   Mobile:  header stacks to ~195px; global drops to ~80px → add 115px. */
+.easter-feature-section,
+.easter-gallery-section,
+.easter-newsletter-map-section,
+.easter-contact-section,
+#good-friday,
+#easter-sunday {
+  scroll-margin-top: 0;
+}
+
+@media (max-width: 860px) {
+  .easter-feature-section,
+  .easter-gallery-section,
+  .easter-newsletter-map-section,
+  .easter-contact-section,
+  #good-friday,
+  #easter-sunday {
+    scroll-margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .easter-feature-section,
+  .easter-gallery-section,
+  .easter-newsletter-map-section,
+  .easter-contact-section,
+  #good-friday,
+  #easter-sunday {
+    scroll-margin-top: 115px;
+  }
+}
+
 .easter-quick-links {
   background: rgba(255, 255, 255, 0.82);
   border-top: 1px solid rgba(24, 72, 40, 0.08);

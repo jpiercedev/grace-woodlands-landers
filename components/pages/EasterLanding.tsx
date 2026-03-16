@@ -208,11 +208,11 @@ export default function EasterLanding() {
             <h2>If you are looking for a church to celebrate the hope and victory of Easter—where the presence of God is welcomed, the power of prayer is believed in, friendships are built, and God's Word is boldly preached… GRACE IS FOR YOU!</h2>
             <ul className="easter-hero-list">
               <li>
-                <strong>Good Friday Gathering</strong>
+                <strong>Good Friday</strong>
                 <span>April 3 • 7:00 PM - 8:30 PM</span>
               </li>
               <li>
-                <strong>Easter Sunday Worship</strong>
+                <strong>Easter Sunday</strong>
                 <span>9:00 AM, 11:00 AM &amp; 2:00 PM (Español)</span>
               </li>
               <li>
@@ -307,7 +307,7 @@ export default function EasterLanding() {
               </p>
               <ul className="easter-feature-list">
                 <li>Friendly hosts ready to help</li>
-                <li>Convenient location in The Woodlands</li>
+                <li>Fast, easy kids check-in for new families</li>
                 <li>Questions? Use the contact form below</li>
               </ul>
             </article>
