@@ -155,7 +155,7 @@ export default function EasterLanding() {
   return (
     <div className="easter-page">
       <div className="easter-announcement-bar">
-        <p>Celebrate Easter at Grace • Worship, hope, and a welcoming weekend for the whole family</p>
+        <p>Celebrate Easter at Grace • He Is Risen!</p>
       </div>
 
       <header className="easter-header">
@@ -193,7 +193,7 @@ export default function EasterLanding() {
             </div>
             <div className="easter-service-chips" aria-label="Key Easter details">
               <span>Good Friday • 7:00 PM</span>
-              <span>Sunday Worship • 9:00 AM &amp; 11:00 AM</span>
+              <span>Sunday • 9:00 AM, 11:00 AM &amp; 2:00 PM (Español)</span>
             </div>
           </div>
 
@@ -207,11 +207,11 @@ export default function EasterLanding() {
               </li>
               <li>
                 <strong>Easter Sunday Worship</strong>
-                <span>9:00 AM &amp; 11:00 AM</span>
+                <span>9:00 AM, 11:00 AM &amp; 2:00 PM (Español)</span>
               </li>
               <li>
                 <strong>Location</strong>
-                <span>24400 Interstate 45 N, The Woodlands, TX 77386</span>
+                <span>24400 Interstate 45 N, Spring, TX 77386</span>
               </li>
             </ul>
             <a href="#contact" className="easter-inline-link">Have a question before you come? Reach out →</a>
@@ -277,7 +277,7 @@ export default function EasterLanding() {
                 Celebrate the resurrection with worship, biblical teaching, and a church family ready to welcome you from the front door to the auditorium.
               </p>
               <ul className="easter-feature-list">
-                <li>Sunday worship at 9:00 AM &amp; 11:00 AM</li>
+                <li>Sunday worship at 9:00 AM, 11:00 AM &amp; 2:00 PM (Español)</li>
                 <li>Grace Kids available for families</li>
                 <li>Come as you are</li>
               </ul>
@@ -303,14 +303,14 @@ export default function EasterLanding() {
         <div className="container easter-gallery-grid">
           <div className="easter-gallery-copy">
             <span className="easter-section-kicker">Experience Easter at Grace</span>
-            <h2>A church home that feels bright, welcoming, and full of life.</h2>
+            <h2>Grace Is For You</h2>
             <p>
-              Grace Woodlands is a place where you can experience authentic worship, biblical teaching, and genuine community—all in a warm, welcoming environment.
+              Grace Woodlands is a place where you can experience authentic worship, biblical teaching, and genuine community.
             </p>
             <ul className="easter-check-list">
               <li>Friendly environment for guests and families</li>
               <li>Gathering spaces built for connection before and after service</li>
-              <li>A campus that is easy to navigate when you arrive</li>
+              <li>A place to grow in your faith</li>
             </ul>
           </div>
 
@@ -374,10 +374,10 @@ export default function EasterLanding() {
           <div className="easter-map-card">
             <div className="easter-map-copy">
               <span className="easter-section-kicker">Find Grace</span>
-              <h2>Visit us in The Woodlands.</h2>
-              <p>24400 Interstate 45 N, The Woodlands, TX 77386</p>
+              <h2>{"You've seen us from the freeway"}</h2>
+              <p>24400 Interstate 45 N, Spring, TX 77386</p>
               <a
-                href="https://www.google.com/maps/dir/?api=1&destination=24400+Interstate+45+N+The+Woodlands+TX+77386"
+                href="https://www.google.com/maps/dir/?api=1&destination=24400+Interstate+45+N+Spring+TX+77386"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="easter-map-link"
@@ -385,6 +385,12 @@ export default function EasterLanding() {
                 Open Directions →
               </a>
             </div>
+
+            <img
+              src="/images/raw/Grace-Building-980x553.jpg"
+              alt="Grace Woodlands Church Building"
+              className="easter-building-img"
+            />
 
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.1234567890123!2d-95.4401582!3d30.1173913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86473693bab7ce87%3A0xe41d74c9ac91fe49!2sGrace%20Woodlands!5e0!3m2!1sen!2sus!4v1702300000000!5m2!1sen!2sus"

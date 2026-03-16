@@ -8709,9 +8709,9 @@ section.contact-section, .contact-section {
 }
 
 .easter-hero-logo {
-  max-width: min(400px, 80%);
+  max-width: min(480px, 90%);
   height: auto;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   display: block;
 }
 
@@ -9100,6 +9100,14 @@ section.contact-section, .contact-section {
   border-radius: 18px;
 }
 
+.easter-building-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+}
+
 .easter-contact-section {
   background: linear-gradient(180deg, rgba(247, 241, 230, 0.92) 0%, rgba(255, 255, 255, 0.88) 100%) !important;
   color: var(--easter-charcoal) !important;
@@ -9353,6 +9361,11 @@ section.contact-section, .contact-section {
     width: 100%;
     height: 280px;
     min-height: 280px;
+    border-radius: 12px;
+  }
+
+  .easter-building-img {
+    height: 180px;
     border-radius: 12px;
   }
 
