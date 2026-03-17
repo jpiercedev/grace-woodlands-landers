@@ -205,7 +205,7 @@ export default function EasterLanding() {
 
           <div className="easter-hero-card">
             <span className="easter-hero-card-label">Easter weekend at a glance</span>
-            <h2>If you are looking for a church to celebrate the hope and victory of Easter—where the presence of God is welcomed, the power of prayer is believed in, friendships are built, and God's Word is boldly preached… GRACE IS FOR YOU!</h2>
+            <h2>If you are looking for a church to celebrate the risen Christ and the hope He brings—where the presence of God is welcomed, the power of prayer is believed in, friendships are built, and God's Word is boldly preached…{' '}GRACE IS FOR YOU!</h2>
             <ul className="easter-hero-list">
               <li>
                 <strong>Good Friday</strong>
@@ -445,7 +445,7 @@ export default function EasterLanding() {
                 </div>
                 <div className="contact-item">
                   <h4>Location</h4>
-                  <address>24400 Interstate 45 N<br />The Woodlands, TX 77386</address>
+                  <address>24400 Interstate 45 N<br />Spring, TX 77386</address>
                 </div>
                 <div className="contact-item">
                   <h4>Follow Us</h4>
@@ -584,7 +584,7 @@ export default function EasterLanding() {
               <li><a href="mailto:info@gracewoodlands.com">info@gracewoodlands.com</a></li>
               <li><a href="tel:+18323812306">(832) 381-2306</a></li>
               <li>24400 Interstate 45 N</li>
-              <li>The Woodlands, TX 77386</li>
+              <li>Spring, TX 77386</li>
             </ul>
           </div>
         </div>
