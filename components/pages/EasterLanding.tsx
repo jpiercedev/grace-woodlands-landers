@@ -166,13 +166,13 @@ export default function EasterLanding() {
 
       <header className="easter-header">
         <div className="container easter-header-inner">
-          <Link href="/">
+          <a href="https://gracewoodlands.com/" target="_blank" rel="noopener noreferrer">
             <img
               src="/images/general/Grace Church LOGO wide.webp"
               alt="Grace Woodlands"
               className="easter-logo"
             />
-          </Link>
+          </a>
           <nav className="easter-header-links" aria-label="Easter page sections">
             <a href="#service-times">Service Times</a>
             <a href="#map">Directions</a>
@@ -213,7 +213,7 @@ export default function EasterLanding() {
               </li>
               <li>
                 <strong>Easter Sunday</strong>
-                <span>9:00 AM, 11:00 AM &amp; 2:00 PM (Español)</span>
+                <span>April 5 • 9:00 AM, 11:00 AM &amp; 2:00 PM (Español)</span>
               </li>
               <li>
                 <strong>Location</strong>
