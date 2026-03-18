@@ -9162,7 +9162,16 @@ section.contact-section, .contact-section {
 }
 
 .easter-newsletter-map-section .newsletter-map-container {
+  /* Remove inner max-width so the parent .container (1200px) controls the width uniformly */
+  max-width: none;
   align-items: stretch;
+}
+
+/* Remove redundant inner max-width/margin from modern-event-container when nested inside .container on Easter pages */
+.easter-overview-section .modern-event-container,
+.easter-gallery-section .modern-event-container {
+  max-width: none;
+  margin: 0;
 }
 
 .easter-newsletter-card,

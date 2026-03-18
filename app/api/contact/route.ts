@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
       console.log('Attempting to send email via Resend...')
       const result = await resend.emails.send({
         from: 'Grace Woodlands <notifications@gracewoodlands.com>',
-        to: ['jonathan@jpierce.dev', 'jpierce@gracewoodlands.com'],
+        to: ['jonathan@jpierce.dev', 'jpierce@gracewoodlands.com', 'info@gracewoodlands.com'],
         subject: '📧 New Contact Form Message',
         html: `
           <!DOCTYPE html>
