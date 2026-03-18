@@ -34,10 +34,10 @@ export const metadata: Metadata = {
     siteName: 'Grace Church',
     images: [
       {
-        url: 'https://gracewoodlands.com/images/raw/Easter%20Thumb.jpg',
-        width: 1900,
-        height: 1062,
-        alt: 'Easter at Grace Church - The Woodlands, Texas',
+        url: 'https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg',
+        width: 980,
+        height: 553,
+        alt: 'Grace Church building - Spring, Texas',
       },
     ],
     locale: 'en_US',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: 'Easter at Grace - Grace Church The Woodlands',
     description:
       'Celebrate Easter weekend at Grace Woodlands with a welcoming church experience for you and your family.',
-    images: ['https://gracewoodlands.com/images/raw/Easter%20Thumb.jpg'],
+    images: ['https://gracewoodlands.com/wp-content/uploads/2021/03/Grace-Building-980x553.jpg'],
   },
   robots: {
     index: true,

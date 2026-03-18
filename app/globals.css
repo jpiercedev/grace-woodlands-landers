@@ -9162,8 +9162,8 @@ section.contact-section, .contact-section {
 }
 
 .easter-newsletter-map-section .newsletter-map-container {
-  /* Remove inner max-width so the parent .container (1200px) controls the width uniformly */
-  max-width: none;
+  /* Match the standard .container 1200px width — overrides newsletter-map-container's 1100px */
+  max-width: 1200px;
   align-items: stretch;
 }
 
@@ -9369,6 +9369,7 @@ section.contact-section, .contact-section {
 
 .easter-footer-bottom p {
   margin: 0;
+  color: #fff;
 }
 
 @media (max-width: 1100px) {
